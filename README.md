@@ -1,8 +1,8 @@
 <h3 align="center">𝚃𝙷𝙴 𝙲𝙻𝙾𝙽𝙴 𝙾𝙵</h3>
-<h2 align="center"> <a href="https://github.com/VILLAIN-V01/HEAVENUSERBOT">🔥 𝚃𝙷𝙴 HEAVEN𝙱𝙾𝚃 🔥</a></h2>
+<h2 align="center"> <a href="https://github.com/VILLAIN-V01/HEAVENUSERBOT">🔥 THE HEAVENBOT 🔥</a></h2>
 
 
-<h1 align="center">⚡ HEAVEN 𝚄𝚂𝙴𝚁𝙱𝙾𝚃 ⚡</h1>
+<h1 align="center">⚡ HEAVEN USERBOT ⚡</h1>
 
 
 [![MAFIA LOGO](https://telegra.ph//file/2002916af5d4951c9b494.jpg)](https://t.me/HeavenBot_Support)
