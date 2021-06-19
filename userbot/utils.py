@@ -121,10 +121,10 @@ def admin_cmd(pattern=None, command=None, **args):
                 CMD_LIST.update({file_test: [cmd]})
         else:
             if len(Config.COMMAND_HAND_LER) == 2:
-                mafiareg = "^" + Config.COMMAND_HAND_LER
+                heavenreg = "^" + Config.COMMAND_HAND_LER
                 reg = Config.COMMAND_HAND_LER[1]
             elif len(Config.COMMAND_HAND_LER) == 1:
-                mafiareg = "^\\" + Config.COMMAND_HAND_LER
+                heavenreg = "^\\" + Config.COMMAND_HAND_LER
                 reg = Config.COMMAND_HAND_LER
             args["pattern"] = re.compile(heavenreg + pattern)
             if command is not None:
@@ -186,10 +186,10 @@ def sudo_cmd(pattern=None, command=None, **args):
                 SUDO_LIST.update({file_test: [cmd]})
         else:
             if len(Config.SUDO_COMMAND_HAND_LER) == 2:
-                mafiareg = "^" + Config.SUDO_COMMAND_HAND_LER
+                heavenreg = "^" + Config.SUDO_COMMAND_HAND_LER
                 reg = Config.SUDO_COMMAND_HAND_LER[1]
             elif len(Config.SUDO_COMMAND_HAND_LER) == 1:
-                mafiareg = "^\\" + Config.SUDO_COMMAND_HAND_LER
+                heavenreg = "^\\" + Config.SUDO_COMMAND_HAND_LER
                 reg = Config.COMMAND_HAND_LER
             args["pattern"] = re.compile(heavenreg + pattern)
             if command is not None:
@@ -635,12 +635,12 @@ def run_async(loop, coro):
     return asyncio.run_coroutine_threadsafe(coro, loop).result()
 
 
-async def unsavegif(event, h1m4n5hu0p):
+async def unsavegif(event, ViLLAiN_V01):
     try:
         await event.client(
             functions.messages.SaveGifRequest(
                 id=types.InputDocument(
-                    id=h1m4n5hu0p.media.document.id,
+                    id=ViLLAiN_V01.media.document.id,
                     access_hash=ViLLAiN_V01.media.document.access_hash,
                     file_reference=ViLLAiN_V01.media.document.file_reference,
                 ),
