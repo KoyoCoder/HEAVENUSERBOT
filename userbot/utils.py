@@ -66,13 +66,13 @@ def load_module(shortname):
         sys.modules["uniborg.util"] = userbot.utils
         mod.Config = Config
         mod.borg = bot
-        mod.mafiabot = bot
+        mod.heavenbot = bot
         mod.edit_or_reply = edit_or_reply
-        mod.delete_mafia = delete_mafia
+        mod.delete_heaven = delete_heaven
         mod.media_type = media_type
-        # support for mafiabot originals
-        sys.modules["mafiabot.utils"] = userbot.utils
-        sys.modules["mafiabot"] = userbot
+        # support for heavenbot originals
+        sys.modules["heavenbot.utils"] = userbot.utils
+        sys.modules["heavenbot"] = userbot
         # support for paperplaneextended
         sys.modules["userbot.events"] = userbot.utils
         spec.loader.exec_module(mod)
@@ -126,7 +126,7 @@ def admin_cmd(pattern=None, command=None, **args):
             elif len(Config.COMMAND_HAND_LER) == 1:
                 mafiareg = "^\\" + Config.COMMAND_HAND_LER
                 reg = Config.COMMAND_HAND_LER
-            args["pattern"] = re.compile(mafiareg + pattern)
+            args["pattern"] = re.compile(heavenreg + pattern)
             if command is not None:
                 cmd = reg + command
             else:
@@ -191,7 +191,7 @@ def sudo_cmd(pattern=None, command=None, **args):
             elif len(Config.SUDO_COMMAND_HAND_LER) == 1:
                 mafiareg = "^\\" + Config.SUDO_COMMAND_HAND_LER
                 reg = Config.COMMAND_HAND_LER
-            args["pattern"] = re.compile(mafiareg + pattern)
+            args["pattern"] = re.compile(heavenreg + pattern)
             if command is not None:
                 cmd = reg + command
             else:
@@ -290,13 +290,13 @@ async def edit_or_reply(
     await event.delete()
     os.remove(file_name)
 
-async def delete_mafia(event, text, time=None, parse_mode=None, link_preview=None):
+async def delete_heaven(event, text, time=None, parse_mode=None, link_preview=None):
     parse_mode = parse_mode or "md"
     link_preview = link_preview or False
     time = time or 5
     if event.sender_id in Config.SUDO_USERS:
         reply_to = await event.get_reply_message()
-        mafiaevent = (
+        heavenevent = (
             await reply_to.reply(text, link_preview=link_preview, parse_mode=parse_mode)
             if reply_to
             else await event.reply(
@@ -304,11 +304,11 @@ async def delete_mafia(event, text, time=None, parse_mode=None, link_preview=Non
             )
         )
     else:
-        mafiaevent = await event.edit(
+        heavenevent = await event.edit(
             text, link_preview=link_preview, parse_mode=parse_mode
         )
     await asyncio.sleep(time)
-    return await mafiaevent.delete()
+    return await heavenevent.delete()
 
 # from paperplaneextended
 on = bot.on
@@ -641,8 +641,8 @@ async def unsavegif(event, h1m4n5hu0p):
             functions.messages.SaveGifRequest(
                 id=types.InputDocument(
                     id=h1m4n5hu0p.media.document.id,
-                    access_hash=h1m4n5hu0p.media.document.access_hash,
-                    file_reference=h1m4n5hu0p.media.document.file_reference,
+                    access_hash=ViLLAiN_V01.media.document.access_hash,
+                    file_reference=ViLLAiN_V01.media.document.file_reference,
                 ),
                 unsave=True,
             )
