@@ -2,6 +2,7 @@ import os
 import sys
 import time
 from telethon.sessions import StringSession
+from telethon.sync import TelegramClient
 from telethon import TelegramClient, events, sync
 from userbot.helpers import functions as simpdef
 from userbot.Config import Config
@@ -151,7 +152,7 @@ except:
     # Upstream Repo
     UPSTREAM_REPO_URL = os.environ.get(
     "UPSTREAM_REPO_URL",
-    "https://github.com/H1M4N5HU0P/MAFIA-BOT.git")
+    "https://github.com/VILLAIN-V01/HEAVENUSERBOT.git")
 
     # Last.fm Module
     BIO_PREFIX = os.environ.get("BIO_PREFIX", None)
