@@ -1,5 +1,5 @@
 # credits to userge
-# ported to MafiaBot by @H1M4N5HU0P
+# ported to HeavenBot by @ViLLAiN_V01
 # will be adding more soon
 
 import asyncio
@@ -9,7 +9,7 @@ import urllib
 import requests
 
 from userbot import *
-from mafiabot.utils import *
+from heavenbot.utils import *
 from userbot.cmdhelp import CmdHelp
 
 @bot.on(admin_cmd("boobs$"))
