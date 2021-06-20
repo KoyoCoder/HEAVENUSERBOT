@@ -139,8 +139,8 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
               "👑HeavenBot Menu Provider Is now Closed👑\n\n         **[© HeavenBot ™](t.me/HeavenBot_Official)**", 5, link_preview=False
             )
         else:
-            mafia_alert = "HELLO THERE. PLEASE MAKE YOUR OWN MAFIABOT AND USE. © MafiaBot ™"
-            await event.answer(mafia_alert, cache_time=0, alert=True)
+            heaven_alert = "HELLO THERE. PLEASE MAKE YOUR OWN HEAVENBOT AND USE. © HeavenBot ™"
+            await event.answer(heaven_alert, cache_time=0, alert=True)
           
     @tgbot.on(
         callbackquery.CallbackQuery(data=compile(b"Information\[(\d*)\]\((.*)\)"))
@@ -148,7 +148,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
     async def Information(event):
         if not event.query.user_id == bot.uid:
             return await event.answer(
-                "HELLO THERE. PLEASE MAKE YOUR OWN MAFIABOT AND USE. © MafiaBot ™",
+                "HELLO THERE. PLEASE MAKE YOUR OWN HEAVENBOT AND USE. © HeavenBot ™",
                 cache_time=0,
                 alert=True,
             )
@@ -181,7 +181,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
     async def commands(event):
         if not event.query.user_id == bot.uid:
             return await event.answer(
-                "HELLO THERE. PLEASE MAKE YOUR OWN MAFIABOT AND USE. © MafiaBot ™",
+                "HELLO THERE. PLEASE MAKE YOUR OWN HEAVENBOT AND USE. © HeavenBot ™",
                 cache_time=0,
                 alert=True,
             )
