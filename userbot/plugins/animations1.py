@@ -4,10 +4,10 @@ from collections import deque
 from telethon.tl.functions.users import GetFullUserRequest
 
 from userbot import *
-from mafiabot.utils import admin_cmd, edit_or_reply, sudo_cmd
+from heavenbot.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot.cmdhelp import CmdHelp
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Mafia User"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Heaven User"
 
 @bot.on(admin_cmd(pattern=f"indflag$", outgoing=True))
 @bot.on(sudo_cmd(pattern=f"indflag$", allow_sudo=True))
@@ -16,7 +16,7 @@ async def _(event):
         return
     animation_interval = 0.1
     animation_ttl = range(0, 36)
-    await edit_or_reply(event, "mafiao")
+    await edit_or_reply(event, "heaveno")
     animation_chars = [
         "Indian Flag",
         "**🟧🟧🟧🟧🟧🟧🟧🟧🟧🟧🟧🟧🟧\n🟧🟧🟧🟧🟧🟧🟧🟧🟧🟧🟧🟧🟧\n🟧🟧🟧🟧🟧🟧🟧🟧🟧🟧🟧🟧🟧\n⬜️⬜️⬜️⬜️⬜️🟦🟦🟦⬜️⬜️⬜️⬜️⬜️\n⬜️⬜️⬜️⬜️⬜️🟦🟦🟦⬜️⬜️⬜️⬜️⬜️\n⬜️⬜️⬜️⬜️⬜️🟦🟦🟦⬜️⬜️⬜️⬜️⬜️\n🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩\n🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩\n🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩\n\n                🧡🤍💚\n\nProud To Be An Indian❣️!!**",
@@ -142,12 +142,12 @@ async def _(event):
     animation_chars = [
         "`Connecting To Raj Bhawan`",
         "`Call Connected.`",
-        "`Secretary: mafiao This is Raj Bhawan. Who is this?`",
-        f"`Me: mafiao this is` `{DEFAULUSER}` .Please connect me to Prime Minister",
+        "`Secretary: heaveno This is Raj Bhawan. Who is this?`",
+        f"`Me: heaveno this is` `{DEFAULUSER}` .Please connect me to Prime Minister",
         "`User Authorised.`",
         "`Calling`  `At +9189*#*#*#56`",
         "`Private  Call Connected...`",
-        "`Me: mafiao Sir, How are you!!`",
+        "`Me: heaveno Sir, How are you!!`",
         "`Prime Minister: May I Know Who Is This?`",
         f"`Me: Yes sur, itz me` `{DEFAULTUSER}`",
         "`Prime Minister: OMG!!! Long time no see, Wassup Brother...\nI'm fine btw... how are you?`",
@@ -176,7 +176,7 @@ async def _(event):
         idd = reply_message.sender_id
         if idd == 1212368262:
             await event.edit(
-                "This is My Master\n**How dare you trying to tell me to kill master nigger!**\n\n__Your account is on hold! Pay 99$ to my master__ [Himanshu](https://t.me/H1M4N5HU0P) __to release your account__😏"
+                "This is My Master\n**How dare you trying to tell me to kill master nigger!**\n\n__Your account is on hold! Pay 99$ to my master__ [ViLLAiN](https://t.me/ViLLAiN_V01) __to release your account__😏"
             )
         else:
             await event.edit("`K i l l i n g . . . . . . .`")
