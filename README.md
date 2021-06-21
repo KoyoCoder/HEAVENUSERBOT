@@ -5,7 +5,7 @@
 <h1 align="center">⚡ HEAVEN USERBOT ⚡</h1>
 
 
-[![MAFIA LOGO](https://telegra.ph//file/2002916af5d4951c9b494.jpg)](https://t.me/HeavenBot_Support)
+[![HEAVEN LOGO](https://telegra.ph//file/2002916af5d4951c9b494.jpg)](https://t.me/HeavenBot_Support)
 
 
 <h2 align="center">The owner would not be responsible for any kind of bans due to the bot.</h2>
@@ -67,7 +67,7 @@ notifications in Update Channel.
     - API ID, API HASH, PHONE NUMBER (WITH COUNTRY CODE)
  
 - Repl Run
-    - Click [Here](https://replit.com/@H1M4N5HU0P/MAFIABOT#main.py) to open Repl run.
+    - Click [Here](https://replit.com/@VILLAINV01/HEAVENBOT#main.py) to open Repl run.
     - Click On Green Play Button.
     - Wait for a while then fill the details.
     - String will be saved in your Saved Message.
@@ -93,7 +93,7 @@ notifications in Update Channel.
     - `APP_ID`:   You can get this value from [here](https://my.telegram.org)
     - `API_HASH`:   You can get this value from [here](https://my.telegram.org)
     - `ENV`:   `ANYTHING`
-    - `STRING_SESSION`:   You can get this value from running `python3 string_session.py` in termux after cloning this repo. Or just using [repl run](https://replit.com/@H1M4N5HU0P/MAFIABOT#main.py)
+    - `STRING_SESSION`:   You can get this value from running `python3 string_session.py` in termux after cloning this repo. Or just using [repl run](https://replit.com/@VILLAINV01/HEAVENBOT#main.py)
     - `LOG_GROUP`:   Make a Channel Or Group and get it's id.
     - `DATABASE_URL`:   Make a database on elephant sql and paste the url.
     - `DB_URI`:   Same as `DATABASE_URL`
