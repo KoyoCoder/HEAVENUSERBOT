@@ -6,19 +6,19 @@ from telethon.tl import functions
 from telethon.tl.functions.channels import GetAdminedPublicChannelsRequest
 
 from userbot import ALIVE_NAME, BIO_MSG, CMD_HELP
-from mafiabot.utils import admin_cmd, edit_or_reply, sudo_cmd
+from heavenbot.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot.cmdhelp import CmdHelp
 
-DEFAULTUSERBIO = str(BIO_MSG) if BIO_MSG else "LEGENDARY AF MAFIABOT"
+DEFAULTUSERBIO = str(BIO_MSG) if BIO_MSG else "LEGENDARY AF HEAVENBOT"
 DEL_TIME_OUT = 60
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Mafia User"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Heaven User"
 
 
 @bot.on(admin_cmd(pattern="autoname"))  # pylint:disable=E0602
 async def _(event):
     if event.fwd_from:
         return
-    mafia = await edit_or_reply(event, "`Starting AutoName Please Wait`")
+    heaven = await edit_or_reply(event, "`Starting AutoName Please Wait`")
     if event.fwd_from:
         return
 
@@ -60,7 +60,7 @@ async def _(event):
 
         await asyncio.sleep(DEL_TIME_OUT)
 
-    await mafia.edit(f"Auto Name has been started my Master")
+    await heaven.edit(f"Auto Name has been started my Master")
 
 
 @bot.on(admin_cmd(pattern="autobio"))  # pylint:disable=E0602
