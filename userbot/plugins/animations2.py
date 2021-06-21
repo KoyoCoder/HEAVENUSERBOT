@@ -2,10 +2,10 @@ import asyncio
 from collections import deque
 
 from userbot import *
-from mafiabot.utils import admin_cmd, edit_or_reply, sudo_cmd
+from heavenbot.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot.cmdhelp import CmdHelp
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Mafia User"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Heaven User"
 
 
 @bot.on(admin_cmd(pattern=r"boxs$", outgoing=True))
@@ -43,7 +43,7 @@ async def _(event):
     animation_ttl = range(12)
     event = await edit_or_reply(event, "`Deploying...`")
     animation_chars = [
-        "**Heroku Connecting To Latest [Github Build](H1M4N5HU0P/MAFIA-BOT)**",
+        "**Heroku Connecting To Latest [Github Build](VILLAIN-V01/HEAVENBOT)**",
         f"**Build started by user** {DEFAULTUSER}",
         f"**Deploy** `535a74f0` **by user** **{DEFAULTUSER}**",
         "**Restarting Heroku Server...**",
@@ -52,8 +52,8 @@ async def _(event):
         "**Process exited with** `status 143`",
         "**Starting process with command** `python3 -m stdborg`",
         "**State changed from starting to up**",
-        "__INFO:MafiaBot:Logged in as 557667062__",
-        "__INFO:MafiaBot:Successfully loaded all plugins__",
+        "__INFO:HeavenBot:Logged in as 557667062__",
+        "__INFO:HeavenBot:Successfully loaded all plugins__",
         "**Build Succeeded**",
     ]
     for i in animation_ttl:
