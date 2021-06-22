@@ -1,5 +1,5 @@
 #!/bin/bash
-#   Copyright (C) 2021 Mafiabot
+#   Copyright (C) 2021 HeavenBot
 #
 #   Poject VΛDΣЯ is free software: 
 #   you can redistribute it and/or modify it under the terms of the GNU General Public License 
@@ -23,7 +23,7 @@ echo """
              ╚╩═╩╩╝╚╩╝─╚══╩╝╚╝╚═╩══╩═╩╩╩══╩═╝╚╝
 
                        𝓛𝓔𝓖𝓔𝓝𝓓𝓐𝓡𝓨 𝓐𝓕 𝓜𝓐𝓕𝓘𝓐𝓑𝓞𝓣 !!
-                                          @MAFIA_USERBOT
+                                          @HeavenBot_Official
 """
 
 python3 -m userbot
