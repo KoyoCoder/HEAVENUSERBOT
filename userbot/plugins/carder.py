@@ -6,35 +6,35 @@ from telethon.tl.functions.messages import DeleteHistoryRequest
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.account import UpdateNotifySettingsRequest
 
-from mafiabot.utils import admin_cmd, sudo_cmd, edit_or_reply
-from mafiabot import CmdHelp, bot as mafiabot
+from heavenbot.utils import admin_cmd, sudo_cmd, edit_or_reply
+from heavenbot import CmdHelp, bot as heavenbot
 
 
-@mafiabot.on(admin_cmd("gencc$"))
-@mafiabot.on(sudo_cmd("gencc$", allow_sudo=True))
-async def _(mafiaevent):
-    if mafiaevent.fwd_from:
+@heavenbot.on(admin_cmd("gencc$"))
+@heavenbot.on(sudo_cmd("gencc$", allow_sudo=True))
+async def _(heavenevent):
+    if heavenevent.fwd_from:
         return
-    mafiacc = Faker()
-    mafianame = mafiacc.name()
-    mafiaadre = mafiacc.address()
-    mafiacard = mafiacc.credit_card_full()
+    heavencc = Faker()
+    heavenname = heavencc.name()
+    heavenadre = heavencc.address()
+    heavencard = heavencc.credit_card_full()
     
-    await edit_or_reply(mafiaevent, f"__**👤 NAME :- **__\n`{mafianame}`\n\n__**🏡 ADDRESS :- **__\n`{mafiaadre}`\n\n__**💸 CARD :- **__\n`{mafiacard}`")
+    await edit_or_reply(heavenevent, f"__**👤 NAME :- **__\n`{heavenname}`\n\n__**🏡 ADDRESS :- **__\n`{heavenadre}`\n\n__**💸 CARD :- **__\n`{heavencard}`")
     
 
-@mafiabot.on(admin_cmd(pattern="bin ?(.*)"))
-@mafiabot.on(sudo_cmd(pattern="bin ?(.*)", allow_sudo=True))
+@heavenbot.on(admin_cmd(pattern="bin ?(.*)"))
+@heavenbot.on(sudo_cmd(pattern="bin ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return 
-    mafia_input = event.pattern_match.group(1)
+    heaven_input = event.pattern_match.group(1)
     chat = "@carol5_bot"
     await event.edit("Checking...")
     async with event.client.conversation(chat) as conv:
           try:     
               response = conv.wait_event(events.NewMessage(incoming=True,from_users=1247032902))
-              await event.client.send_message(chat, f"/bin {mafia_input}")
+              await event.client.send_message(chat, f"/bin {heaven_input}")
               response = await response 
           except YouBlockedUserError: 
               await event.reply("Please Unblock @carol5_bot")
@@ -44,18 +44,18 @@ async def _(event):
              await event.client.send_message(event.chat_id, response.message)
 
 
-@mafiabot.on(admin_cmd(pattern="vbv ?(.*)"))
-@mafiabot.on(sudo_cmd(pattern="vbv ?(.*)", allow_sudo=True))
+@heavenbot.on(admin_cmd(pattern="vbv ?(.*)"))
+@heavenbot.on(sudo_cmd(pattern="vbv ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return 
-    mafia_input = event.pattern_match.group(1)
+    heaven_input = event.pattern_match.group(1)
     chat = "@carol5_bot"
     await event.edit("Checking...")
     async with event.client.conversation(chat) as conv:
           try:     
               response = conv.wait_event(events.NewMessage(incoming=True,from_users=1247032902))
-              await event.client.send_message(chat, f"/vbv {mafia_input}")
+              await event.client.send_message(chat, f"/vbv {heaven_input}")
               response = await response 
           except YouBlockedUserError: 
               await event.reply("Please Unblock @carol5_bot")
@@ -65,18 +65,18 @@ async def _(event):
              await event.client.send_message(event.chat_id, response.message)
     
     
-@mafiabot.on(admin_cmd(pattern="key ?(.*)"))
-@mafiabot.on(sudo_cmd(pattern="key ?(.*)", allow_sudo=True))
+@heavenbot.on(admin_cmd(pattern="key ?(.*)"))
+@heavenbot.on(sudo_cmd(pattern="key ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return 
-    mafia_input = event.pattern_match.group(1)
+    heaven_input = event.pattern_match.group(1)
     chat = "@carol5_bot"
     await event.edit("Checking...")
     async with event.client.conversation(chat) as conv:
           try:     
               response = conv.wait_event(events.NewMessage(incoming=True,from_users=1247032902))
-              await event.client.send_message(chat, f"/key {mafia_input}")
+              await event.client.send_message(chat, f"/key {heaven_input}")
               response = await response 
           except YouBlockedUserError: 
               await event.reply("Please Unblock @carol5_bot")
@@ -86,18 +86,18 @@ async def _(event):
              await event.client.send_message(event.chat_id, response.message)
  
   
-@mafiabot.on(admin_cmd(pattern="iban ?(.*)"))
-@mafiabot.on(sudo_cmd(pattern="iban ?(.*)", allow_sudo=True))
+@heavenbot.on(admin_cmd(pattern="iban ?(.*)"))
+@heavenbot.on(sudo_cmd(pattern="iban ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return 
-    mafia_input = event.pattern_match.group(1)
+    heaven_input = event.pattern_match.group(1)
     chat = "@carol5_bot"
     await event.edit("Checking...")
     async with event.client.conversation(chat) as conv:
           try:     
               response = conv.wait_event(events.NewMessage(incoming=True,from_users=1247032902))
-              await event.client.send_message(chat, f"/iban {mafia_input}")
+              await event.client.send_message(chat, f"/iban {heaven_input}")
               response = await response 
           except YouBlockedUserError: 
               await event.reply("Please Unblock @carol5_bot")
@@ -107,18 +107,18 @@ async def _(event):
              await event.client.send_message(event.chat_id, response.message)
 
     
-@mafiabot.on(admin_cmd(pattern="ccheck ?(.*)"))
-@mafiabot.on(sudo_cmd(pattern="ccheck ?(.*)", allow_sudo=True))
+@heavenbot.on(admin_cmd(pattern="ccheck ?(.*)"))
+@heavenbot.on(sudo_cmd(pattern="ccheck ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return 
-    mafia_input = event.pattern_match.group(1)
+    heaven_input = event.pattern_match.group(1)
     chat = "@carol5_bot"
     await event.edit("Checking...")
     async with event.client.conversation(chat) as conv:
           try:     
               response = conv.wait_event(events.NewMessage(incoming=True,from_users=1247032902))
-              await event.client.send_message(chat, f"/ss {mafia_input}")
+              await event.client.send_message(chat, f"/ss {heaven_input}")
               response = await response 
           except YouBlockedUserError: 
               await event.reply("Please Unblock @carol5_bot")
@@ -128,18 +128,18 @@ async def _(event):
              await event.client.send_message(event.chat_id, response.message)
              
              
-@mafiabot.on(admin_cmd(pattern="ccbin ?(.*)"))
-@mafiabot.on(sudo_cmd(pattern="ccbin ?(.*)", allow_sudo=True))
+@heavenbot.on(admin_cmd(pattern="ccbin ?(.*)"))
+@heavenbot.on(sudo_cmd(pattern="ccbin ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return 
-    mafia_input = event.pattern_match.group(1)
+    heaven_input = event.pattern_match.group(1)
     chat = "@carol5_bot"
-    await event.edit(f"Trying to generate CC from the given bin `{mafia_input}`")
+    await event.edit(f"Trying to generate CC from the given bin `{heaven_input}`")
     async with event.client.conversation(chat) as conv:
           try:     
               response = conv.wait_event(events.NewMessage(incoming=True,from_users=1247032902))
-              await event.client.send_message(chat, f"/gen {mafia_input}")
+              await event.client.send_message(chat, f"/gen {heaven_input}")
               response = await response 
           except YouBlockedUserError: 
               await event.reply("Please Unblock @carol5_bot")
