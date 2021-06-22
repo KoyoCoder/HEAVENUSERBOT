@@ -30,13 +30,13 @@
 
   <summary> <h4>Credits 🏅</h4> </summary>
 
-• [JaaduBot](https://github.com/Amberyt/JaaduBot)
+• [Javes 2.0](https://github.com/Javes786/javes-2.0)
 
-• [Uniborg](https://github.com/spechide/uniborg)
+• [Hellion Owner](https://t.me/Royal_king7)
 
 • [Hêllẞø†](https://github.com/thevaders/vader)
 
-• [Kittu](https://t.me/A_viyu)
+• [AKAY](https://t.me/akborana1)
 
 </details>
 
