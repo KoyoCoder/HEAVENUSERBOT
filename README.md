@@ -34,7 +34,7 @@
 
 • [Hellion Owner](https://t.me/Royal_king7)
 
-• [𝙎𝙃𝘼𝙎𝙃𝘼𝙉𝙆](https://t.me/shashankxD)
+• [𝙇𝙄𝙊𝙉-𝙓](https://github.com/TeamLion-X/Lion-X)
 
 • [AKAY](https://t.me/akborana1)
 
