@@ -3,40 +3,40 @@
 # first userbot to port javes song module...
 # keep credit if u wanna kang...
 # else u are a gay...no doubt in that....
-# Now in MafiaBot
+# Now in HeavenBot
 
 import asyncio
 import re
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
 from userbot import bot
-from mafiabot.utils import admin_cmd, sudo_cmd, edit_or_reply, progress
+from heavenbot.utils import admin_cmd, sudo_cmd, edit_or_reply, progress
 from userbot.cmdhelp import CmdHelp
 from userbot.helpers.functions import deEmojify
 
 @bot.on(admin_cmd(pattern="lyrics(?: |$)(.*)", outgoing=True))
 @bot.on(sudo_cmd(pattern="lyrics(?: |$)(.*)", allow_sudo=True))
-async def nope(h1m4n5hu0p):
-    mafia = h1m4n5hu0p.pattern_match.group(1)
-    if not mafia:
-        if h1m4n5hu0p.is_reply:
-            (await h1m4n5hu0p.get_reply_message()).message
+async def nope(villain_v01):
+    heaven = villain_v01.pattern_match.group(1)
+    if not heaven:
+        if villain_v01.is_reply:
+            (await villain_v01.get_reply_message()).message
         else:
-            await h1m4n5hu0p.edit(
+            await villain_v01.edit(
                 "`Sir please give some query to search and download it for you..!`"
             )
             return
 
-    troll = await bot.inline_query("iLyricsBot", f"{(deEmojify(mafia))}")
+    troll = await bot.inline_query("iLyricsBot", f"{(deEmojify(heaven))}")
 
     await troll[0].click(
-        h1m4n5hu0p.chat_id,
-        reply_to=h1m4n5hu0p.reply_to_msg_id,
-        silent=True if h1m4n5hu0p.is_reply else False,
+        villain_v01.chat_id,
+        reply_to=villain_v01.reply_to_msg_id,
+        silent=True if villain_v01.is_reply else False,
         hide_via=True,
     )
 
-    await h1m4n5hu0p.delete()
+    await villain_v01.delete()
 
 #>>>>>>>>>>>>>>>>>>✓✓✓✓✓<<<<<<<<<<<<<<<<<<<
 
@@ -497,7 +497,7 @@ async def _(event):
             await borg.send_file(
                 event.chat_id,
                 songh,
-                caption="🔆**Here's the requested song!**🔆\n`Check out` [MafiaBot](https://t.me/MafiaBot_Chit_Chat)",
+                caption="🔆**Here's the requested song!**🔆\n`Check out` [HeavenBot](https://t.me/HeavenBot_Support)",
             )
             await event.delete()
         except YouBlockedUserError:
