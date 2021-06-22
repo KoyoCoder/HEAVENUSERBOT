@@ -34,7 +34,7 @@
 
 • [Hellion Owner](https://t.me/Royal_king7)
 
-• [Hêllẞø†](https://github.com/thevaders/vader)
+• [𝙎𝙃𝘼𝙎𝙃𝘼𝙉𝙆](https://t.me/shashankxD)
 
 • [AKAY](https://t.me/akborana1)
 
