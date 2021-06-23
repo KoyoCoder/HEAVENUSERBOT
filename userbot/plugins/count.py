@@ -5,7 +5,7 @@ from telethon.tl.custom import Dialog
 from telethon.tl.types import Channel, Chat, User
 
 from userbot import CMD_HELP
-from mafiabot.utils import admin_cmd, edit_or_reply, sudo_cmd
+from heavenbot.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot.cmdhelp import CmdHelp
 
 @bot.on(admin_cmd(pattern="stats$"))
@@ -82,7 +82,7 @@ async def stats(
     response += f"🔱 **Unread Mentions:** {unread_mentions} \n\n"
     response += f"☣️   __It Took:__ {stop_time:.02f}s \n"
     response += (
-        f"📌 **From The DataBase Of** :- [MafiaBot](https://t.me/MafiaBot_Support)"
+        f"📌 **From The DataBase Of** :- [HeavenBot](https://t.me/HeavenBot_Official)"
     )
     await hell.edit(response)
 
