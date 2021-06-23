@@ -10,7 +10,7 @@ from telethon.errors import PhotoInvalidDimensionsError
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.messages import SendMediaRequest
 
-from mafiabot.utils import admin_cmd, edit_or_reply, progress, sudo_cmd
+from heavenbot.utils import admin_cmd, edit_or_reply, progress, sudo_cmd
 from userbot import CMD_HELP
 from userbot.helpers.functions import unzip
 from userbot.cmdhelp import CmdHelp
@@ -21,13 +21,13 @@ if not os.path.isdir("./temp"):
 
 @bot.on(admin_cmd(pattern="stoi$"))
 @bot.on(sudo_cmd(pattern="stoi$", allow_sudo=True))
-async def _(mafia):
-    if mafia.fwd_from:
+async def _(heaven):
+    if heaven.fwd_from:
         return
-    reply_to_id = mafia.message.id
-    if mafia.reply_to_msg_id:
-        reply_to_id = mafia.reply_to_msg_id
-    event = await edit_or_reply(mafia, "Converting.....")
+    reply_to_id = heaven.message.id
+    if heaven.reply_to_msg_id:
+        reply_to_id = heaven.reply_to_msg_id
+    event = await edit_or_reply(heaven, "Converting.....")
     if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
         os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
     if event.reply_to_msg_id:
@@ -36,11 +36,11 @@ async def _(mafia):
         reply_message = await event.get_reply_message()
         to_download_directory = Config.TMP_DOWNLOAD_DIRECTORY
         downloaded_file_name = os.path.join(to_download_directory, file_name)
-        downloaded_file_name = await mafia.client.download_media(
+        downloaded_file_name = await heaven.client.download_media(
             reply_message, downloaded_file_name
         )
         if os.path.exists(downloaded_file_name):
-            caat = await mafia.client.send_file(
+            caat = await heaven.client.send_file(
                 event.chat_id,
                 downloaded_file_name,
                 force_document=False,
@@ -56,13 +56,13 @@ async def _(mafia):
 
 @bot.on(admin_cmd(pattern="itos$"))
 @bot.on(sudo_cmd(pattern="itos$", allow_sudo=True))
-async def _(mafia):
-    if mafia.fwd_from:
+async def _(heaven):
+    if heaven.fwd_from:
         return
-    reply_to_id = mafia.message.id
-    if mafia.reply_to_msg_id:
-        reply_to_id = mafia.reply_to_msg_id
-    event = await edit_or_reply(mafia, "Converting.....")
+    reply_to_id = heaven.message.id
+    if heaven.reply_to_msg_id:
+        reply_to_id = heaven.reply_to_msg_id
+    event = await edit_or_reply(heaven, "Converting.....")
     if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
         os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
     if event.reply_to_msg_id:
@@ -71,11 +71,11 @@ async def _(mafia):
         reply_message = await event.get_reply_message()
         to_download_directory = Config.TMP_DOWNLOAD_DIRECTORY
         downloaded_file_name = os.path.join(to_download_directory, file_name)
-        downloaded_file_name = await mafia.client.download_media(
+        downloaded_file_name = await heaven.client.download_media(
             reply_message, downloaded_file_name
         )
         if os.path.exists(downloaded_file_name):
-            caat = await mafia.client.send_file(
+            caat = await heaven.client.send_file(
                 event.chat_id,
                 downloaded_file_name,
                 force_document=False,
@@ -157,31 +157,31 @@ async def on_file_to_photo(event):
 async def _(event):
     if event.fwd_from:
         return
-    mafiareply = await event.get_reply_message()
-    if not mafiareply or not mafiareply.media or not mafiareply.media.document:
+    heavenreply = await event.get_reply_message()
+    if not heavenreply or not heavenreply.media or not heavenreply.media.document:
         return await edit_or_reply(event, "`Stupid!, This is not animated sticker.`")
-    if mafiareply.media.document.mime_type != "application/x-tgsticker":
+    if heavenreply.media.document.mime_type != "application/x-tgsticker":
         return await edit_or_reply(event, "`Stupid!, This is not animated sticker.`")
     reply_to_id = event.message
     if event.reply_to_msg_id:
         reply_to_id = await event.get_reply_message()
     chat = "@tgstogifbot"
-    mafiaevent = await edit_or_reply(event, "`Converting to gif ...`")
+    heavenevent = await edit_or_reply(event, "`Converting to gif ...`")
     async with event.client.conversation(chat) as conv:
         try:
             await silently_send_message(conv, "/start")
-            await event.client.send_file(chat, mafiareply.media)
+            await event.client.send_file(chat, heavenreply.media)
             response = await conv.get_response()
             await event.client.send_read_acknowledge(conv.chat_id)
             if response.text.startswith("Send me an animated sticker!"):
-                return await mafiaevent.edit("`This file is not supported`")
-            mafiaresponse = response if response.media else await conv.get_response()
+                return await heavenevent.edit("`This file is not supported`")
+            heavenresponse = response if response.media else await conv.get_response()
             await event.client.send_read_acknowledge(conv.chat_id)
-            mafiafile = Path(await event.client.download_media(mafiaresponse, "./temp/"))
-            mafiagif = Path(await unzip(mafiafile))
+            heavenfile = Path(await event.client.download_media(mafiaresponse, "./temp/"))
+            heavengif = Path(await unzip(heavenfile))
             kraken = await event.client.send_file(
                 event.chat_id,
-                mafiagif,
+                heavengif,
                 support_streaming=True,
                 force_document=False,
                 reply_to=reply_to_id,
@@ -196,12 +196,12 @@ async def _(event):
                     unsave=True,
                 )
             )
-            await mafiaevent.delete()
-            for files in (mafiagif, mafiafile):
+            await heavenevent.delete()
+            for files in (heavengif, heavenfile):
                 if files and os.path.exists(files):
                     os.remove(files)
         except YouBlockedUserError:
-            await mafiaevent.edit("Unblock @tgstogifbot")
+            await heavenevent.edit("Unblock @tgstogifbot")
             return
 
 
