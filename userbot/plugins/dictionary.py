@@ -7,7 +7,7 @@ import asyncurban
 from PyDictionary import PyDictionary
 
 from userbot import CMD_HELP
-from mafiabot.utils import admin_cmd, edit_or_reply, sudo_cmd
+from heavenbot.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot.cmdhelp import CmdHelp
 
 @bot.on(admin_cmd(pattern="ud (.*)"))
@@ -39,7 +39,7 @@ async def _(event):
     mafia = dictionary.meaning(word)
     output = f"**Word :** __{word}__\n\n"
     try:
-        for a, b in mafia.items():
+        for a, b in heaven.items():
             output += f"**{a}**\n"
             for i in b:
                 output += f"☞__{i}__\n"
