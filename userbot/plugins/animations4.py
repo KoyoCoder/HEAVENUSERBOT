@@ -125,7 +125,7 @@ async def ammastar(heavenstar):
       
         await asyncio.sleep(animation_interval)
         
-        await mafiastar.edit(animation_chars[i % 11])
+        await heavenstar.edit(animation_chars[i % 11])
     
         
 @bot.on(admin_cmd(pattern=r"lmoon", outgoing=True))

@@ -5,7 +5,7 @@ from userbot.cmdhelp import CmdHelp
 
 ASTRO = ""
 
-Credit = "This Modules is property of mafia userbot, Don't remove this line. this module created by Kittu @A_viyu"
+Credit = "This Modules is property of heaven userbot, Don't remove this line. this module created by Kittu @A_viyu"
 
 @bot.on(admin_cmd(pattern="hs ?(.*)", outgoing=True))
 @bot.on(sudo_cmd(pattern="hs ?(.*)", allow_sudo=True))

@@ -1,4 +1,4 @@
-from mafiabot.utils import *
+from heavenbot.utils import *
 from userbot.cmdhelp import CmdHelp
 
 

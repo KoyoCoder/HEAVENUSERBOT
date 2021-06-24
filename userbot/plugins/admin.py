@@ -149,7 +149,7 @@ async def promote(promt):
         await promt.client(EditAdminRequest(promt.chat_id, user.id, new_rights, rank))
         await heavenevent.edit("Promoted Successfully!")
     except BadRequestError:
-        await mafiaevent.edit(NO_PERM)
+        await heavenevent.edit(NO_PERM)
         return
     if BOTLOG:
         await promt.client.send_message(

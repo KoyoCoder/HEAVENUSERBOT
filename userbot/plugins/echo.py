@@ -22,7 +22,7 @@ from userbot.cmdhelp import CmdHelp
 
 @bot.on(admin_cmd(pattern="echo$"))
 @bot.on(sudo_cmd(pattern="echo$", allow_sudo=True))
-async def echo(mafia):
+async def echo(heaven):
     if heaven.fwd_from:
         return
     if heaven.reply_to_msg_id is not None:

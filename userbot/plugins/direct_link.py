@@ -36,7 +36,7 @@ async def direct_link_generator(request):
     links = re.findall(r"\bhttps?://.*\.\S+", message)
     if not links:
         reply = "`No links found!`"
-        await mafiaevent.edit(reply)
+        await heavenevent.edit(reply)
     for link in links:
         if "drive.google.com" in link:
             reply += gdrive(link)

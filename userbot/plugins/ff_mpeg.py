@@ -120,12 +120,12 @@ async def ff_mpeg_trim_cmd(event):
                 allow_cache=False,
                 reply_to=reply_to_id,
                 progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                    progress(d, t, mafiaevent, c_time, "trying to upload")
+                    progress(d, t, heavenevent, c_time, "trying to upload")
                 ),
             )
             os.remove(o)
         except Exception as e:
-            return await edit_delete(mafiaevent, f"**Error : **`{e}`")
+            return await edit_delete(heavenevent, f"**Error : **`{e}`")
     elif len(cmt) == 2:
         # output should be image
         cmd, start_time = cmt
@@ -147,7 +147,7 @@ async def ff_mpeg_trim_cmd(event):
                 allow_cache=False,
                 reply_to=event.message.id,
                 progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                    progress(d, t, mafiaevent, c_time, "trying to upload")
+                    progress(d, t, heavenevent, c_time, "trying to upload")
                 ),
             )
             os.remove(o)

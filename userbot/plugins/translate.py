@@ -6,7 +6,7 @@ Available Commands:
 import emoji
 from googletrans import Translator
 
-from mafiabot.utils import *
+from heavenbot.utils import *
 from userbot.cmdhelp import CmdHelp
 
 @bot.on(admin_cmd(pattern="trt ?(.*)"))
@@ -48,10 +48,10 @@ async def _(event):
 
 @bot.on(admin_cmd(pattern=r"trc", outgoing=True))
 @bot.on(sudo_cmd(pattern=r"trc", allow_sudo=True))
-async def _(mafia):
-    if mafia.fwd_from:
+async def _(heaven):
+    if heaven.fwd_from:
         return
-    await edit_or_reply(mafia, "**All The Language Codes Can Be Found** \n ⚡ [Here](https://telegra.ph/Himanshu-05-07) ⚡🔥")
+    await edit_or_reply(heaven, "**All The Language Codes Can Be Found** \n ⚡ [Here](https://telegra.ph/Himanshu-05-07) ⚡🔥")
 
 
 CmdHelp("translate").add_command(

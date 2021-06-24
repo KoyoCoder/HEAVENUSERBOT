@@ -177,7 +177,7 @@ async def _(event):
                 return await heavenevent.edit("`This file is not supported`")
             heavenresponse = response if response.media else await conv.get_response()
             await event.client.send_read_acknowledge(conv.chat_id)
-            heavenfile = Path(await event.client.download_media(mafiaresponse, "./temp/"))
+            heavenfile = Path(await event.client.download_media(heavenresponse, "./temp/"))
             heavengif = Path(await unzip(heavenfile))
             kraken = await event.client.send_file(
                 event.chat_id,

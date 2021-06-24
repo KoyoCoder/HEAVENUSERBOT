@@ -11,9 +11,9 @@ import os
 from telethon import functions, types
 from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 
-from mafiabot.utils import admin_cmd, sudo_cmd, edit_or_reply
+from heavenbot.utils import admin_cmd, sudo_cmd, edit_or_reply
 from userbot.cmdhelp import CmdHelp
-from mafiabot.Config import Config
+from heavenbot.Config import Config
 
 LOGGER = Config.PLUGIN_CHANNEL
 SUDO_WALA = Config.SUDO_USERS
@@ -35,16 +35,16 @@ async def spammer(e):
 
 @bot.on(admin_cmd(pattern="bigspam"))
 @bot.on(sudo_cmd(pattern="bigspam", allow_sudo=True))
-async def bigspam(mafia):
-    if not mafia.text[0].isalpha() and mafia.text[0] not in ("/", "#", "@", "!"):
-        mafia_msg = mafia.text
-        mafiabot_count = int(mafia_msg[9:13])
-        mafia_spam = str(mafia.text[13:])
-        for i in range(1, mafiabot_count):
-            await mafia.respond(mafia_spam)
-        await mafia.delete()
+async def bigspam(heaven):
+    if not heaven.text[0].isalpha() and heaven.text[0] not in ("/", "#", "@", "!"):
+        heaven_msg = heaven.text
+        heavenbot_count = int(heaven_msg[9:13])
+        heaven_spam = str(heaven.text[13:])
+        for i in range(1, heavenbot_count):
+            await heaven.respond(heaven_spam)
+        await heaven.delete()
         if LOGGER:
-            await mafia.client.send_message(
+            await heaven.client.send_message(
                 LOGGER_GROUP, "#BIGSPAM \n\n" "Bigspam was executed successfully"
             )
 
@@ -102,5 +102,5 @@ CmdHelp("spam").add_command(
 ).add_command(
   "dspam", "<delay> <spam count> <text>", "Sends the text 'X' number of times in 'Y' seconds of delay", ".dspam 5 100 Hello"
 ).add_command(
-  "bigspam", "<count> <text>", "Sends the text 'X' number of times. This what mafiabot iz known for. The Best BigSpam Ever", ".bigspam 5000 Hello"
+  "bigspam", "<count> <text>", "Sends the text 'X' number of times. This what heavenbot iz known for. The Best BigSpam Ever", ".bigspam 5000 Hello"
 ).add()

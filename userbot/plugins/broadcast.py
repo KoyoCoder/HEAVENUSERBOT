@@ -29,7 +29,7 @@ async def heavenbroadcast_send(event):
         )
     keyword = heaveninput_str.lower()
     no_of_chats = sql.num_broadcastlist_chat(keyword)
-    group_ = Get(mafia)
+    group_ = Get(heaven)
     if no_of_chats == 0:
         return await edit_delete(
             event,

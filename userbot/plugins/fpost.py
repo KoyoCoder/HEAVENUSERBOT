@@ -2,7 +2,7 @@ import string
 
 from telethon.tl.types import Channel
 
-from mafiabot.utils import admin_cmd, edit_or_reply, sudo_cmd
+from heavenbot.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot import CMD_HELP
 from userbot.cmdhelp import CmdHelp
 from userbot.Config import Config
@@ -15,13 +15,13 @@ global groupsid
 groupsid = []
 
 
-async def all_groups_id(mafia):
-    mafiagroups = []
-    async for dialog in mafia.client.iter_dialogs():
+async def all_groups_id(heaven):
+    heavengroups = []
+    async for dialog in heaven.client.iter_dialogs():
         entity = dialog.entity
         if isinstance(entity, Channel) and entity.megagroup:
-            mafiagroups.append(entity.id)
-    return mafiagroups
+            heavengroups.append(entity.id)
+    return heavengroups
 
 
 @bot.on(admin_cmd(pattern="frwd$"))

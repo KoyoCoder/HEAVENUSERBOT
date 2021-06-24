@@ -5,13 +5,13 @@ from pathlib import Path
 from telethon import events
 from telethon import functions, types
 from telethon.tl.types import InputMessagesFilterDocument
-from mafiabot.utils import *
+from heavenbot.utils import *
 from userbot import *
 from userbot import bot as heavenbot
 
 DELETE_TIMEOUT = 5
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Heaven User"
-heaven_logo = "./H1M4N5HU0P/mafiabot_logo.jpg"
+heaven_logo = "./H1M4N5HU0P/heavenbot_logo.jpg"
 ViLLAiN_V01 = heavenbot.uid
 heaven = f"[{DEFAULTUSER}](tg://user?id={ViLLAiN_V01})"
 
@@ -140,5 +140,5 @@ CmdHelp("core").add_command(
 ).add_command(
   "send", "<file name>", "Sends the given file from your userbot server, if any.", "send alive"
 ).add_command(
-  "cmds", None, "Gives out the list of modules in mafiabot."
+  "cmds", None, "Gives out the list of modules in heavenbot."
 ).add()

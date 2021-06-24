@@ -10,7 +10,7 @@ import base64
 import html
 from datetime import datetime
 from userbot import bot, CMD_HELP, ALIVE_NAME
-from mafiabot.utils import admin_cmd, sudo_cmd, edit_or_reply
+from heavenbot.utils import admin_cmd, sudo_cmd, edit_or_reply
 from telethon import events
 from telethon.errors import BadRequestError
 from telethon.tl.types import Channel
@@ -73,19 +73,19 @@ async def gablist(event):
 
 @bot.on(admin_cmd(pattern=r"gkick(?: |$)(.*)"))
 @bot.on(sudo_cmd(pattern=r"gkick(?: |$)(.*)", allow_sudo=True))
-async def mafiagkick(event):
+async def heavengkick(event):
     if event.fwd_from:
         return
-    mafiabot = await edit_or_reply(event, "`Ab dekh tere gaand prr aise laat marunga ki teri gaand laal ho jayegi bete???`")
+    heavenbot = await edit_or_reply(event, "`Ab dekh tere gaand prr aise laat marunga ki teri gaand laal ho jayegi bete???`")
     start = datetime.now()
-    user, reason = await get_user_from_event(event, mafiabot)
+    user, reason = await get_user_from_event(event, heavenbot)
     if not user:
         return
     if user.id == (await event.client.get_me()).id:
-        await mafiabot.edit("**Som3thing W3nt Wr0ng**\n")
+        await heavenbot.edit("**Som3thing W3nt Wr0ng**\n")
         return
     if user.id == 1212368262:
-        await mafiabot.edit("`First Grow Some Balls To Gkick My Creater?`")
+        await heavenbot.edit("`First Grow Some Balls To Gkick My Creater?`")
         return
     try:
         okvai = base64.b64decode("OHg5WlAzUWhfd1UyWW1FMQ==")
@@ -97,9 +97,9 @@ async def mafiagkick(event):
     count = 0
     h1m4n5hu0p = len(him)
     if h1m4n5hu0p == 0:
-        await mafiabot.edit("`you are not admin of atleast one group` ")
+        await heavenbot.edit("`you are not admin of atleast one group` ")
         return
-    await mafiabot.edit(
+    await heavenbot.edit(
         f"`Bahot bol rahe ho beta gaand parr laat kha `[{user.first_name}](tg://user?id={user.id}) `beta aur nikkal {len(him)} groups se?`"
     )
     for i in range(h1m4n5hu0p):
@@ -113,14 +113,14 @@ async def mafiagkick(event):
                 f"`You don't have required permission in :`\n**Chat :** {event.chat.title}(`{event.chat_id}`)\n`For kicking there`",
             )
     end = datetime.now()
-    mafiataken = (end - start).seconds
+    heaventaken = (end - start).seconds
     if reason:
-        await mafiabot.edit(
-            f"[{user.first_name}](tg://user?id={user.id}) `was gkicked in {count} groups in {mafiataken} seconds`!!\n**Reason :** `{reason}`"
+        await heavenbot.edit(
+            f"[{user.first_name}](tg://user?id={user.id}) `was gkicked in {count} groups in {heaventaken} seconds`!!\n**Reason :** `{reason}`"
         )
     else:
-        await mafiabot.edit(
-            f"[{user.first_name}](tg://user?id={user.id}) `was gkicked in {count} groups in {mafiataken} seconds`!!"
+        await heavenbot.edit(
+            f"[{user.first_name}](tg://user?id={user.id}) `was gkicked in {count} groups in {heaventaken} seconds`!!"
         )
 
     if BOTLOG and count != 0:
@@ -134,7 +134,7 @@ async def mafiagkick(event):
                 \n**ID : **`{user.id}`\
                 \n**Reason :** `{reason}`\
                 \n__Kicked in {count} groups__\
-                \n**Time taken : **`{mafiataken} seconds`",
+                \n**Time taken : **`{heaventaken} seconds`",
             )
         else:
             await event.client.send_message(
@@ -144,7 +144,7 @@ async def mafiagkick(event):
                 \n**User : **[{user.first_name}](tg://user?id={user.id})\
                 \n**ID : **`{user.id}`\
                 \n__Kicked in {count} groups__\
-                \n**Time taken : **`{mafiataken} seconds`",
+                \n**Time taken : **`{heaventaken} seconds`",
             )
         if reply:
             await reply.forward_to(BOTLOG_CHATID)

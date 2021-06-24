@@ -36,7 +36,7 @@ async def _(event):
         return
     word = event.pattern_match.group(1)
     dictionary = PyDictionary()
-    mafia = dictionary.meaning(word)
+    heaven = dictionary.meaning(word)
     output = f"**Word :** __{word}__\n\n"
     try:
         for a, b in heaven.items():
