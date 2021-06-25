@@ -33,10 +33,10 @@ heaven = bot.uid
 
 edit_time = 16
 """ =======================CONSTANTS====================== """
-file1 = "https://telegra.ph/file/2408a2877646132ac52fd.mp4"
-file2 = "https://telegra.ph/file/e97d640332ce5eadb3f89.mp4"
-file3 = "https://telegra.ph/file/0b2862d312a2aeb804b36.mp4"
-file4 = "https://telegra.ph/file/866c79e351350a08f2b06.mp4"
+file1 = "https://telegra.ph/file/6bcd2eb22ca5dda7833b9.mp4"
+file2 = ""
+file3 = ""
+file4 = ""
 """ =======================CONSTANTS====================== """
 pm_caption = "  __**🔥🔥𝐇𝐄𝐀𝐕𝐄𝐍 𝐁𝐎𝐓 𝐈𝐒 𝐀𝐋𝐈𝐕𝐄🔥🔥**__\n\n"
 
