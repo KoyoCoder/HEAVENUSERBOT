@@ -106,7 +106,7 @@ def num_broadcastlist():
 def num_broadcastlist_chat(keywoard):
     try:
         return (
-            SESSION.query(MafiaBroadcast.keywoard)
+            SESSION.query(HeavenBroadcast.keywoard)
             .filter(HeavenBroadcast.keywoard == keywoard)
             .count()
         )
