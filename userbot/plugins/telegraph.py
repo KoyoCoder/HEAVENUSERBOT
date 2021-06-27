@@ -10,7 +10,7 @@ from userbot.cmdhelp import CmdHelp
 
 HEAVEN_NAME = str(ALIVE_NAME) if ALIVE_NAME else "Heaven User"
 
-villain-v01 = bot.uid
+villain_v01 = bot.uid
 
 telegraph = Telegraph()
 r = telegraph.create_account(short_name=Config.TELEGRAPH_SHORT_NAME)
