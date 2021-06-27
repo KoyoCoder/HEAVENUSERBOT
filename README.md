@@ -5,7 +5,7 @@
 <h1 align="center">⚡ HEAVEN USERBOT ⚡</h1>
 
 
-[![HEAVEN LOGO](https://telegra.ph//file/2002916af5d4951c9b494.jpg)](https://t.me/HeavenBot_Support)
+[![HEAVEN LOGO](https://telegra.ph/file/e917a18edcb2e7c41cd6a.jpg)](https://t.me/HeavenBot_Support)
 
 
 <h2 align="center">The owner would not be responsible for any kind of bans due to the bot.</h2>
