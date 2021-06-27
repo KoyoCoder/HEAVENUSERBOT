@@ -17,7 +17,7 @@ from userbot.cmdhelp import CmdHelp
 # credits to kraken, john snow
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Heaven User"
 # credits to kraken, john snow
-villain-v01 = bot.uid
+villain_v01 = bot.uid
 # credits to kraken, john snow
 # credits to kraken, john snow
 @bot.on(admin_cmd(pattern="hny$", outgoing=True))
