@@ -32,7 +32,7 @@
 
 • [Javes 2.0](https://github.com/Javes786/javes-2.0)
 
-• [Hellion Owner](https://t.me/Royal_king7)
+• [SHIVANSH](https://t.me/Royal_king7)
 
 • [𝙇𝙄𝙊𝙉-𝙓](https://github.com/TeamLion-X/Lion-X)
 
