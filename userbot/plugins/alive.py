@@ -50,7 +50,7 @@ pm_caption += f"┣•➳➠ `Version:` `{heavenversion}`\n"
 pm_caption += f"┣•➳➠ `Sudo:` `{sudou}`\n"
 pm_caption += f"┣•➳➠ `Channel:` [ᴊᴏɪɴ](https://t.me/HeavenBot_Official)\n"
 pm_caption += f"┣•➳➠ `Creator:` [𓆩𝙑𝙞𝙇𝙇∆𝙞𝙉𝙤𝙐𝙎𓆪](https://t.me/ViLLAiN_V01)\n"
-pm_caption += f"┣•➳➠ `Support:` [HeavenBot Group](https://t.me/HeavenBot_Support)\n"
+pm_caption += f"┣•➳➠ `Support:` [ᴊᴏɪɴ](https://t.me/HeavenBot_Support)\n"
 pm_caption += f"┗━━━━━━━━━━━━━━━━━━━\n"
 pm_caption += " [🔥REPO🔥](https://github.com/VILLAIN-V01/HEAVENBOT) 🔹 [📜License📜](https://github.com/VILLAIN-V01/HEAVENBOT/blob/main/LICENSE)"
 
