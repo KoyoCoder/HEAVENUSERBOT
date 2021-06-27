@@ -12,17 +12,17 @@ from userbot.cmdhelp import CmdHelp
 async def _(event):
     if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
 
-        await edit_or_reply(event, "`Testing MafiaBot`")
+        await edit_or_reply(event, "`Testing HeavenBot`")
         await asyncio.sleep(1)
-        await edit_or_reply(event, "`Testing MafiaBot.`")
+        await edit_or_reply(event, "`Testing HeavenBot.`")
         await asyncio.sleep(1)
-        await edit_or_reply(event, "`Testing MafiaBot..`")
+        await edit_or_reply(event, "`Testing HeavenBot..`")
         await asyncio.sleep(1)
-        await edit_or_reply(event, "`Testing MafiaBot...`")
+        await edit_or_reply(event, "`Testing HeavenBot...`")
         await asyncio.sleep(1)
-        await edit_or_reply(event, "`Testing MafiaBot....`")
+        await edit_or_reply(event, "`Testing HeavenBot....`")
         await asyncio.sleep(1)
-        await edit_or_reply(event, "`Testing MafiaBot.....`")
+        await edit_or_reply(event, "`Testing HeavenBot.....`")
         await asyncio.sleep(2)
         await edit_or_reply(event, "__Testing Successful__")
         await asyncio.sleep(2)
@@ -30,10 +30,10 @@ async def _(event):
         await asyncio.sleep(2)
         await edit_or_reply(event, "__Output Generated Successfully__")
         await asyncio.sleep(2)
-        await edit_or_reply(event, "**SAVING OUTPUT TO MAFIABOT LOCAL DATABASE**")
+        await edit_or_reply(event, "**SAVING OUTPUT TO HEAVENBOT LOCAL DATABASE**")
         await asyncio.sleep(3.5)
         await edit_or_reply(event, 
-            "Your[MafiaBot](https:/t.me/MafiaBot_Support) is working Fine...\n       Join @MafiaBot_Chit_Chat For Any Help......"
+            "Your[HeavenBot](https:/t.me/HeavenBot_Official) is working Fine...\n       Join @HeavenBot_Support For Any Help......"
         )
 
 CmdHelp("test").add_command(
