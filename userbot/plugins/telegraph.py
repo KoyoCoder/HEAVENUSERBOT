@@ -8,9 +8,9 @@ from userbot import ALIVE_NAME
 from heavenbot.utils import admin_cmd, sudo_cmd, edit_or_reply
 from userbot.cmdhelp import CmdHelp
 
-MAFIA_NAME = str(ALIVE_NAME) if ALIVE_NAME else "Mafia User"
+HEAVEN_NAME = str(ALIVE_NAME) if ALIVE_NAME else "Heaven User"
 
-h1m4n5hu0p = bot.uid
+villain-v01 = bot.uid
 
 telegraph = Telegraph()
 r = telegraph.create_account(short_name=Config.TELEGRAPH_SHORT_NAME)
@@ -23,7 +23,7 @@ async def _(event):
     if event.fwd_from:
         return
     if Config.PLUGIN_CHANNEL is None:
-        await edit_or_reply(event, "Please set the required environment variable `PLUGIN_CHANNEL` for this plugin to work\n\nGo to [MafiaBot Chat Group](t.me/Mafiabot_Chit_Chat) for assistance"
+        await edit_or_reply(event, "Please set the required environment variable `PLUGIN_CHANNEL` for this plugin to work\n\nGo to [HeavenBot Support Group](t.me/HeavenBot_Support) for assistance"
         )
         return
     if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
@@ -62,7 +62,7 @@ async def _(event):
                 os.remove(downloaded_file_name)
                 await edit_or_reply(event, 
                    "✓ **YOUR FILE :-** https://telegra.ph{} \n✓ **Time Taken :-** `{}` secs \n✓ **By :- [{}](tg://user?id={})**".format(
-                        media_urls[0], (ms + ms_two), MAFIA_NAME, h1m4n5hu0p
+                        media_urls[0], (ms + ms_two), HEAVEN_NAME, villain-v01
                     ),
                     link_preview=True,
                 )
@@ -89,9 +89,9 @@ async def _(event):
             response = telegraph.create_page(title_of_page, html_content=page_content)
             end = datetime.now()
             ms = (end - start).seconds
-            himanshu = f"https://telegra.ph/{response['path']}"
+            villain = f"https://telegra.ph/{response['path']}"
             await edit_or_reply(event, 
-                  f"✓ **Pasted to** [telegraph]({himanshu}) \n✓ **Time Taken :-** `{ms}` secs\n✓** By :- **[{MAFIA_NAME}](tg://user?id={h1m4n5hu0p})", link_preview=True)
+                  f"✓ **Pasted to** [telegraph]({villain}) \n✓ **Time Taken :-** `{ms}` secs\n✓** By :- **[{HEAVEN_NAME}](tg://user?id={villain-v01})", link_preview=True)
     else:
         await edit_or_reply(event, 
             "Reply to a message to get a permanent telegra.ph link."
