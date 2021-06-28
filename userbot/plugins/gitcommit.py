@@ -25,7 +25,7 @@ async def download(event):
         await edit_or_reply(event, "`Please ADD Proper Access Token from github.com`")
         return
     if Var.GIT_REPO_NAME is None:
-        await edit_or_reply(event, "`Please ADD Proper Github Repo Name of mafiaBot`")
+        await edit_or_reply(event, "`Please ADD Proper Github Repo Name of heavenBot`")
         return
     mafiabot = await edit_or_reply(event, "Processing ...")
     if not os.path.isdir(GIT_TEMP_DIR):
@@ -39,16 +39,16 @@ async def download(event):
             reply_message.media, GIT_TEMP_DIR
         )
     except Exception as e:
-        await mafiabot.edit(str(e))
+        await heavenbot.edit(str(e))
     else:
         end = datetime.now()
         ms = (end - start).seconds
         await event.delete()
-        await mafiabot.edit(
+        await heavenbot.edit(
             "Downloaded to `{}` in {} seconds.".format(downloaded_file_name, ms)
         )
         await mafiabot.edit("Committing to Github....")
-        await git_commit(downloaded_file_name, mafiabot)
+        await git_commit(downloaded_file_name, heavenbot)
 
 
 async def git_commit(file_name, mafiabot):
@@ -67,7 +67,7 @@ async def git_commit(file_name, mafiabot):
     for i in content_list:
         create_file = True
         if i == 'ContentFile(path="' + file_name + '")':
-            return await mafiabot.edit("`File Already Exists`")
+            return await heavenbot.edit("`File Already Exists`")
             create_file = False
     file_name = "userbot/plugins/" + file_name
     if create_file == True:
@@ -85,9 +85,9 @@ async def git_commit(file_name, mafiabot):
             )
         except:
             print("Cannot Create Plugin")
-            await mafiabot.edit("Cannot Upload Plugin")
+            await heavenbot.edit("Cannot Upload Plugin")
     else:
-        return await mafiabot.edit("`Committed Suicide`")
+        return await heavenbot.edit("`Committed Suicide`")
         
         
 CmdHelp("github").add_command(
