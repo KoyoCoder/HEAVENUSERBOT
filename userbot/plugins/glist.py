@@ -48,7 +48,7 @@ UNBAN_RIGHTS = ChatBannedRights(
     embed_links=None,
 )
 
-HIMANSHU = str(ALIVE_NAME) if ALIVE_NAME else "Mafia User"
+VILLAIN = str(ALIVE_NAME) if ALIVE_NAME else "Heaven User"
 papa = borg.uid
 
 @bot.on(admin_cmd(pattern="listgban$"))
@@ -95,14 +95,14 @@ async def heavengkick(event):
     him = []
     him = await admin_groups(event)
     count = 0
-    h1m4n5hu0p = len(him)
-    if h1m4n5hu0p == 0:
+    villain_v01 = len(him)
+    if villain_v01 == 0:
         await heavenbot.edit("`you are not admin of atleast one group` ")
         return
     await heavenbot.edit(
         f"`Bahot bol rahe ho beta gaand parr laat kha `[{user.first_name}](tg://user?id={user.id}) `beta aur nikkal {len(him)} groups se?`"
     )
-    for i in range(h1m4n5hu0p):
+    for i in range(villain_v01):
         try:
             await event.client.kick_participant(him[i], user.id)
             await asyncio.sleep(0.5)
