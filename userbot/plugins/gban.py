@@ -10,7 +10,7 @@ from telethon.tl.types import MessageEntityMentionName
 from telethon.utils import get_input_location
 from telethon.events import ChatAction
 
-HIMANSHU = str(ALIVE_NAME) if ALIVE_NAME else "Mafia User"
+VILLAIN = str(ALIVE_NAME) if ALIVE_NAME else "Heaven User"
 papa = borg.uid
 
 
@@ -120,7 +120,7 @@ async def gban(userbot):
     except:
         pass
     return await heavenbot.edit(
-        f"[{user.first_name}](tg://user?id={user.id}) Beta majdur ko khodna aur [{HIMANSHU}](tg://user?id={papa}) ko chodna kabhi sikhana nhi.\n\n**Gban Successful 🔥\nAffected Chats😏 : {a} **"
+        f"[{user.first_name}](tg://user?id={user.id}) Beta majdur ko khodna aur [{VILLAIN}](tg://user?id={papa}) ko chodna kabhi sikhana nhi.\n\n**Gban Successful 🔥\nAffected Chats😏 : {a} **"
     )
 
 @bot.on(admin_cmd(pattern="ungban ?(.*)"))
@@ -194,28 +194,28 @@ async def gunban(userbot):
 
 @borg.on(events.ChatAction)
 async def handler(h1m4n5hu0p): 
-   if h1m4n5hu0p.user_joined or h1m4n5hu0p.user_added:      
+   if villain_v01.user_joined or villain_v01.user_added:      
        try:       	
          from userbot.plugins.sql_helper.gmute_sql import is_gmuted
-         guser = await h1m4n5hu0p.get_user()      
+         guser = await villain_v01.get_user()      
          gmuted = is_gmuted(guser.id)             
        except:      
           return
        if gmuted:
         for i in gmuted:
             if i.sender == str(guser.id):                                                                         
-                chat = await h1m4n5hu0p.get_chat()
+                chat = await villain_v01.get_chat()
                 admin = chat.admin_rights
                 creator = chat.creator   
                 if admin or creator:
                  try:
-                    await client.edit_permissions(h1m4n5hu0p.chat_id, guser.id, view_messages=False)                              
-                    await h1m4n5hu0p.reply(
+                    await client.edit_permissions(villain_v01.chat_id, guser.id, view_messages=False)                              
+                    await villain_v01.reply(
                      f"⚠️⚠️**Warning**⚠️⚠️\n\n`Gbanned User Joined the chat!!`\n"                      
                      f"**⚜️ Victim Id ⚜️**:\n[{guser.id}](tg://user?id={guser.id})\n"                   
                      f"**🔥 Action 🔥**  :\n`Banned this piece of shit....` **AGAIN!**")                                                
                  except:       
-                    h1m4n5hu0p.reply("`Shit!! No permission to ban users.\n@admins ban this retard.\nGlobally Banned User And A Potential Spammer`\n**Make your group a safe place by cleaning this shit**")                   
+                    villain_v01.reply("`Shit!! No permission to ban users.\n@admins ban this retard.\nGlobally Banned User And A Potential Spammer`\n**Make your group a safe place by cleaning this shit**")                   
                     return
                   
                   
