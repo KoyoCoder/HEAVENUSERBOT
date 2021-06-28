@@ -22,7 +22,7 @@ HEROKU_API_KEY = Config.HEROKU_API_KEY
 
 Heroku = heroku3.from_key(Var.HEROKU_API_KEY)
 heroku_api = "https://api.heroku.com"
-heaven_logo = "./H1M4N5HU0P/heavenbot_logo.jpg"
+heaven_logo = "./VILLAIN_V01/heavenbot_logo.jpg"
 
 
 @borg.on(
@@ -187,7 +187,7 @@ async def _(dyno):
         thumb = heaven_logo
     except:
         return await dyno.reply(
-            " Please make sure your Heroku API Key, Your App name are configured correctly in the heroku\n\n[Visit Support Group For Help](https://t.me/MafiaBot_Chit_Chat)"
+            " Please make sure your Heroku API Key, Your App name are configured correctly in the heroku\n\n[Visit Support Group For Help](https://t.me/HeavenBot_Support)"
         )
     heaven_data = app.get_log()
     heaven_key = (
