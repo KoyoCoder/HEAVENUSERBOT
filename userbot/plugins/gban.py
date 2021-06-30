@@ -193,29 +193,29 @@ async def gunban(userbot):
 
 
 @borg.on(events.ChatAction)
-async def handler(villain_v01): 
-   if villain_v01.user_joined or villain_v01.user_added:      
+async def handler(villainv01): 
+   if villainv01.user_joined or villainv01.user_added:      
        try:       	
          from userbot.plugins.sql_helper.gmute_sql import is_gmuted
-         guser = await villain_v01.get_user()      
+         guser = await villainv01.get_user()      
          gmuted = is_gmuted(guser.id)             
        except:      
           return
        if gmuted:
         for i in gmuted:
             if i.sender == str(guser.id):                                                                         
-                chat = await villain_v01.get_chat()
+                chat = await villainv01.get_chat()
                 admin = chat.admin_rights
                 creator = chat.creator   
                 if admin or creator:
                  try:
-                    await client.edit_permissions(villain_v01.chat_id, guser.id, view_messages=False)                              
-                    await villain_v01.reply(
+                    await client.edit_permissions(villainv01.chat_id, guser.id, view_messages=False)                              
+                    await villainv01.reply(
                      f"⚠️⚠️**Warning**⚠️⚠️\n\n`Gbanned User Joined the chat!!`\n"                      
                      f"**⚜️ Victim Id ⚜️**:\n[{guser.id}](tg://user?id={guser.id})\n"                   
                      f"**🔥 Action 🔥**  :\n`Banned this piece of shit....` **AGAIN!**")                                                
                  except:       
-                    villain_v01.reply("`Shit!! No permission to ban users.\n@admins ban this retard.\nGlobally Banned User And A Potential Spammer`\n**Make your group a safe place by cleaning this shit**")                   
+                    villainv01.reply("`Shit!! No permission to ban users.\n@admins ban this retard.\nGlobally Banned User And A Potential Spammer`\n**Make your group a safe place by cleaning this shit**")                   
                     return
                   
                   
