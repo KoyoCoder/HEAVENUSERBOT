@@ -193,7 +193,7 @@ async def gunban(userbot):
 
 
 @borg.on(events.ChatAction)
-async def handler(h1m4n5hu0p): 
+async def handler(villain_v01): 
    if villain_v01.user_joined or villain_v01.user_added:      
        try:       	
          from userbot.plugins.sql_helper.gmute_sql import is_gmuted
