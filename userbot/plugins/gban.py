@@ -88,9 +88,9 @@ async def gban(userbot):
     except:
         return await heavenbot.edit(f"**Something W3NT Wrong 🤔**")
     if user:
-        if user.id == 816517310 or user.id == 1212368262:
+        if user.id == 1320929227 or user.id == 1562976343:
             return await heavenbot.edit(
-                f"`First Grow Some Balls To Gban My Creater and my Creaters Freands🤫🚶`"
+                f"`First He is My Devloper i can Not do 🤫🚶`"
             )
         try:
             from userbot.plugins.sql_helper.gmute_sql import gmute
