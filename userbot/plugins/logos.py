@@ -61,7 +61,7 @@ async def lg1(Heaven):
     await bot.send_file(
         Heaven.chat_id,
         file_name,
-        caption=f"**Made By :** [{DEFAULTUSER}](tg://user?id={heaven})",
+        caption=f"**Made By :** [{DEFAULTUSER}](tg://user?id={heave})",
     )
     await event.delete()
     try:
