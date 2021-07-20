@@ -17,7 +17,7 @@ aura = borg.uid
 async def lg1(Heaven):
     event = await edit_or_reply(Heaven, "`Processing.....`")
     fnt = await get_font_file(Heaven.client, "@VegaFonts")
-    if AuraX.reply_to_msg_id:
+    if Heaven.reply_to_msg_id:
         rply = await Heaven.get_reply_message()
         logo_ = await rply.download_media()
     else:
