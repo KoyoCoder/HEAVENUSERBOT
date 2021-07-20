@@ -23,7 +23,7 @@ from telethon.tl.types import InputMessagesFilterPhotos
 from . import *
 
 
-@heaven_cmd(pattern="logo ?(.*)")
+@heavenbot_cmd(pattern="logo ?(.*)")
 async def logo_gen(event):
     xx = await eor(event, get_string("com_1"))
     name = event.pattern_match.group(1)
