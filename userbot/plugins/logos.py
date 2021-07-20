@@ -59,7 +59,7 @@ async def lg1(Heaven):
     file_name = "HeavenBot.png"
     img.save(file_name, "png")
     await bot.send_file(
-        AuraX.chat_id,
+        Heaven.chat_id,
         file_name,
         caption=f"**Made By :** [{DEFAULTUSER}](tg://user?id={heaven})",
     )
