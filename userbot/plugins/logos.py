@@ -16,7 +16,7 @@ aura = borg.uid
 @bot.on(sudo_cmd(pattern="logo (.*)", allow_sudo=True))
 async def lg1(Heaven):
     event = await edit_or_reply(Heaven, "`Processing.....`")
-    fnt = await get_font_file(AuraX.client, "@VegaFonts")
+    fnt = await get_font_file(Heaven.client, "@VegaFonts")
     if AuraX.reply_to_msg_id:
         rply = await Heaven.get_reply_message()
         logo_ = await rply.download_media()
