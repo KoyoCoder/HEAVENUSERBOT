@@ -11,15 +11,17 @@
 <h2 align="center">The owner would not be responsible for any kind of bans due to the bot.</h2>
 
 
-# FORK AT YOUR OWN RISK
+# FORK AT YOUR OWN RISK   
 
 
 
-  <summary> • INSTALLING • </summary>
 
-### The Easy Way
 
-<h4>⚜️ DEPLOY TO HEROKU ⚜️</h4>
+  <summary> • INSTALLING • </summary> 
+
+### The Easy Way 
+
+<h4>⚜️ DEPLOY TO HEROKU ⚜️</h4> 
 
 <p align="left"><a href="https://heroku.com/deploy?template=https://github.com/VILLAIN-V01/HEAVENBOT"> <img src="https://img.shields.io/badge/Deploy%20To%20Heroku-✘-red?style=for-the-badge&logo=heroku" width="220" height="38.45"/></a></p>
 
