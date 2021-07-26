@@ -32,9 +32,8 @@ from userbot.Config import Config
 ENV = bool(os.environ.get("ENV", False))
 if ENV:
     from userbot.Config import Config
-else:
-    if os.path.exists("config.py"):
-        from config import Development as Config
+elif os.path.exists("config.py"):
+    from config import Development as Config
 
 
 
@@ -395,10 +394,11 @@ async def progress(
         time_to_completion = round((total - current) / speed) * 1000
         estimated_total_time = elapsed_time + time_to_completion
         progress_str = "[{0}{1}] {2}%\n".format(
-            "".join(["▰" for i in range(math.floor(percentage / 10))]),
-            "".join(["▱" for i in range(10 - math.floor(percentage / 10))]),
+            "".join("▰" for i in range(math.floor(percentage / 10))),
+            "".join("▱" for i in range(10 - math.floor(percentage / 10))),
             round(percentage, 2),
         )
+
         tmp = progress_str + "{0} of {1}\nETA: {2}".format(
             humanbytes(current), humanbytes(total), time_formatter(estimated_total_time)
         )

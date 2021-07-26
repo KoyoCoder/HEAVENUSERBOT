@@ -67,10 +67,11 @@ async def _(event):
             percentage = downloader.get_progress() * 100
             downloader.get_speed()
             progress_str = "`{0}{1} {2}`%".format(
-                "".join(["▰" for i in range(math.floor(percentage / 5))]),
-                "".join(["▱" for i in range(20 - math.floor(percentage / 5))]),
+                "".join("▰" for i in range(math.floor(percentage / 5))),
+                "".join("▱" for i in range(20 - math.floor(percentage / 5))),
                 round(percentage, 2),
             )
+
             estimated_total_time = downloader.get_eta(human=True)
             try:
                 current_message = f"Downloading the file\

@@ -15,7 +15,7 @@ async def _(event):
     if event.fwd_from:
         return
     animation_interval = 0.1
-    animation_ttl = range(0, 36)
+    animation_ttl = range(36)
     await edit_or_reply(event, "heaveno")
     animation_chars = [
         "Indian Flag",
@@ -31,7 +31,7 @@ async def Ooo(e):
     if e.fwd_from:
         return
     t = "yo"
-    for j in range(15):
+    for _ in range(15):
         t = t[:-1] + "oo"
         await e.edit(t)
         
@@ -166,8 +166,6 @@ async def _(event):
 async def _(event):
     if event.fwd_from:
         return
-    animation_interval = 2
-    animation_ttl = range(0, 11)
     if event.reply_to_msg_id:
         reply_message = await event.get_reply_message()
         replied_user = await event.client(GetFullUserRequest(reply_message.sender_id))
@@ -195,6 +193,8 @@ async def _(event):
                 "**Target killed successfully nacho bc(°̥̥̥̥̥̥̥̥•̀.̫•́°̥̥̥̥̥̥̥)**",
             ]
 
+            animation_interval = 2
+            animation_ttl = range(11)
             for i in animation_ttl:
 
                 await asyncio.sleep(animation_interval)
@@ -348,7 +348,7 @@ async def _(event):
     if event.fwd_from:
         return
     animation_interval = 0.1
-    animation_ttl = range(0, 36)
+    animation_ttl = range(36)
     event = await edit_or_reply(event, "┏━━━┓╋╋╋╋┏━━━┓ \n┃┏━┓┃╋╋╋╋┃┏━┓┃ \n┃┃╋┃┣┓┏┓┏┫┃╋┃┃ \n┃┃╋┃┃┗┛┗┛┃┃╋┃┃ \n┃┗━┛┣┓┏┓┏┫┗━┛┃ \n┗━━━┛┗┛┗┛┗━━━┛"
     )
     animation_chars = [

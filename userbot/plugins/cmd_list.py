@@ -17,7 +17,6 @@ async def install(event):
     if event.reply_to_msg_id:
         reply_to_id = event.reply_to_msg_id
     cmd = "ls userbot/plugins"
-    thumb = heaven_logo
     process = await asyncio.create_subprocess_shell(
         cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
     )
@@ -27,6 +26,7 @@ async def install(event):
     o = "\n".join(_o)
     OUTPUT = f"List of Plugins in HeavenBot :- \n\n{o}\n\n<><><><><><><><><><><><><><><><><><><><><><><><>\nHELP:- If you want to know the commands for a plugin, do :- \n.plinfo <plugin name> without the < > brackets. \nJoin https://t.me/HeavenBot_Support for help."
     if len(OUTPUT) > 69:
+        thumb = heaven_logo
         with io.BytesIO(str.encode(OUTPUT)) as out_file:
             out_file.name = "cmd_list.text"
             heaven_file = await bot.send_file(

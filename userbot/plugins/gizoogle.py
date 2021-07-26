@@ -15,13 +15,12 @@ async def gizoogle(event):
     await edit_or_reply(event, "Processing...")
     if not input_str:
         return await edit_or_reply(event, "I can't gizoogle nothing.")
-    else:
-        try:
-            result = text(input_str)
-        except:
-            result = "Failed to gizoogle the text."
-        finally:
-            return await edit_or_reply(event, result)
+    try:
+        result = text(input_str)
+    except:
+        result = "Failed to gizoogle the text."
+    finally:
+        return await edit_or_reply(event, result)
 
 
 def text(input_text: str) -> str:
@@ -35,8 +34,7 @@ def text(input_text: str) -> str:
     )
     soup = bs4.BeautifulSoup(soup_input, "lxml")
     giz = soup.find_all(text=True)
-    giz_text = giz[37].strip("\r\n")  # Hacky, but consistent.
-    return giz_text
+    return giz[37].strip("\r\n")
 
 CmdHelp("gizoogle").add_command(
   "giz", "<your sentence>", "Gives you the provided sentence in gangsters language. #Dope_AF")

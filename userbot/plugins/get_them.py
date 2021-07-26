@@ -48,11 +48,10 @@ async def _(event):
         ):
             if x.deleted:
                 mentions += "\n `{}`".format(x.id)
-            else:
-                if isinstance(x.participant, ChannelParticipantAdmin):
-                    mentions += "\n 🔸 [{}](tg://user?id={}) `{}`".format(
-                        x.first_name, x.id, x.id
-                    )
+            elif isinstance(x.participant, ChannelParticipantAdmin):
+                mentions += "\n 🔸 [{}](tg://user?id={}) `{}`".format(
+                    x.first_name, x.id, x.id
+                )
     except Exception as e:
         mentions += " " + str(e) + "\n"
     if reply_message:

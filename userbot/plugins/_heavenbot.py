@@ -28,9 +28,6 @@ async def heavenbott(event):
             string += f"`▶️ `"
             for sira, a in enumerate(i):
                 string += "`" + str(a)
-                if sira == i.index(i[-1]):
-                    string += "`"
-                else:
-                    string += "`, "
+                string += "`" if sira == i.index(i[-1]) else "`, "
             string += "\n"
         await event.edit(["NEED_MODULE"] + "\n\n" + string)

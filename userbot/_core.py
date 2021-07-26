@@ -21,11 +21,11 @@ async def send(event):
     if event.fwd_from:
         return
     message_id = event.message.id
-    thumb = heaven_logo
     input_str = event.pattern_match.group(1)
     omk = f"**⍟ Plugin name ≈** `{input_str}`\n**⍟ Uploaded by ≈** {heaven}\n\n⚡ **[LEGENDARY AF HEAVENBOT](t.me/HEAVENBot_Support)** ⚡"
     the_plugin_file = "./userbot/plugins/{}.py".format(input_str)
     if os.path.exists(the_plugin_file):
+        thumb = heaven_logo
         lauda = await event.client.send_file(
             event.chat_id,
             the_plugin_file,

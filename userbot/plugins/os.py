@@ -14,7 +14,7 @@ async def _(event):
 
     animation_interval = 0.5
 
-    animation_ttl = range(0, 11)
+    animation_ttl = range(11)
 
     await edit_or_reply(event, "Mac")
 
@@ -49,7 +49,7 @@ async def _(event):
 
     animation_interval = 0.5
 
-    animation_ttl = range(0, 11)
+    animation_ttl = range(11)
 
     await edit_or_reply(event, "Windows")
 
@@ -84,7 +84,7 @@ async def _(event):
 
     animation_interval = 0.5
 
-    animation_ttl = range(0, 11)
+    animation_ttl = range(11)
 
     await edit_or_reply(event, "Linux")
 
@@ -119,7 +119,7 @@ async def _(event):
 
     animation_interval = 0.5
 
-    animation_ttl = range(0, 11)
+    animation_ttl = range(11)
 
     await edit_or_reply(event, "Stock")
 
@@ -154,7 +154,7 @@ async def _(event):
 
     animation_interval = 0.1
 
-    animation_ttl = range(0, 7)
+    animation_ttl = range(7)
 
     await edit_or_reply(event, "OS")
 

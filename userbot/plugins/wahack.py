@@ -17,7 +17,7 @@ async def _(event):
     if event.fwd_from:
         return
     animation_interval = 2
-    animation_ttl = range(0, 15)
+    animation_ttl = range(15)
     # input_str = event.pattern_match.group(1)
     # if input_str == "wahack":
     await edit_or_reply(event, "wahack..")

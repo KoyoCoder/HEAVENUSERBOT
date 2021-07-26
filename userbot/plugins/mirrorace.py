@@ -56,7 +56,7 @@ async def _(event):
             end = datetime.now()
             ms = (end - start).seconds
             required_file_name = input_str
-            await mone.edit("Found `{}` in {} seconds.".format(input_str, ms))
+            await mone.edit("Found `{}` in {} seconds.".format(required_file_name, ms))
         else:
             await mone.edit("File Not found in local server. Give me a file path :((")
             return False

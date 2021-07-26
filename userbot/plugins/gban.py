@@ -18,7 +18,7 @@ papa = borg.uid
 async def get_full_user(event):  
     args = event.pattern_match.group(1).split(':', 1)
     extra = None
-    if event.reply_to_msg_id and not len(args) == 2:
+    if event.reply_to_msg_id and len(args) != 2:
         previous_message = await event.get_reply_message()
         user_obj = await event.client.get_entity(previous_message.sender_id)
         extra = event.pattern_match.group(1)
@@ -41,7 +41,7 @@ async def get_full_user(event):
         try:
             user_obj = await event.client.get_entity(user)
         except Exception as err:
-            return await edit_or_reply(event, "**Som3thing W3nt Wr0ng**\n", str(err))           
+            return await edit_or_reply(event, "**Som3thing W3nt Wr0ng**\n", str(err))
     return user_obj, extra
 
 
@@ -63,7 +63,7 @@ async def gban(userbot):
     ids = userbot
     sender = await ids.get_sender()
     hum = await ids.client.get_me()
-    if not sender.id == hum.id:
+    if sender.id != hum.id:
         heavenbot = await edit_or_reply(ids, "Trying to gban this retard!")
     else:
         heavenbot = await edit_or_reply(ids, "`Ok! Gbaning this piece of shit....`")
@@ -88,7 +88,7 @@ async def gban(userbot):
     except:
         return await heavenbot.edit(f"**Something W3NT Wrong 🤔**")
     if user:
-        if user.id == 1320929227 or user.id == 1562976343:
+        if user.id in [1320929227, 1562976343]:
             return await heavenbot.edit(
                 f"`First He is My Devloper i can Not do 🤫🚶`"
             )
@@ -131,7 +131,7 @@ async def gunban(userbot):
     ids = userbot
     sender = await ids.get_sender()
     hum = await ids.client.get_me()
-    if not sender.id == hum.id:
+    if sender.id != hum.id:
         heavenbot = await edit_or_reply(ids, "`Trying to ungban this kid...`")
     else:
         heavenbot = await edit_or_reply(ids, "`Ungban in progress...`")
@@ -156,7 +156,7 @@ async def gunban(userbot):
     except:
         return await heavenbot.edit("**Som3ting W3nt Wr0ng**")
     if user:
-        if user.id == 816517310 or user.id == 1212368262:
+        if user.id in [816517310, 1212368262]:
             return await heavenbot.edit("**You need to grow some balls to gban / ungban my creator and his freands**")
         try:
             from userbot.plugins.sql_helper.gmute_sql import ungmute
@@ -179,7 +179,7 @@ async def gunban(userbot):
             except:
                 b += 1
     else:
-        await heavenbot.edit("**Reply to a user**")     
+        await heavenbot.edit("**Reply to a user**")
     try:
         if ungmute(user.id) is False:
             return await heavenbot.edit("**Error! I think User already ungbanned.**")
@@ -194,28 +194,29 @@ async def gunban(userbot):
 
 @borg.on(events.ChatAction)
 async def handler(villainv01): 
-   if villainv01.user_joined or villainv01.user_added:      
-       try:       	
-         from userbot.plugins.sql_helper.gmute_sql import is_gmuted
-         guser = await villainv01.get_user()      
-         gmuted = is_gmuted(guser.id)             
-       except:      
-          return
-       if gmuted:
-        for i in gmuted:
-            if i.sender == str(guser.id):                                                                         
-                chat = await villainv01.get_chat()
-                admin = chat.admin_rights
-                creator = chat.creator   
-                if admin or creator:
-                 try:
-                    await client.edit_permissions(villainv01.chat_id, guser.id, view_messages=False)                              
-                    await villainv01.reply(
-                     f"⚠️⚠️**Warning**⚠️⚠️\n\n`Gbanned User Joined the chat!!`\n"                      
-                     f"**⚜️ Victim Id ⚜️**:\n[{guser.id}](tg://user?id={guser.id})\n"                   
-                     f"**🔥 Action 🔥**  :\n`Banned this piece of shit....` **AGAIN!**")                                                
-                 except:       
-                    villainv01.reply("`Shit!! No permission to ban users.\n@admins ban this retard.\nGlobally Banned User And A Potential Spammer`\n**Make your group a safe place by cleaning this shit**")                   
-                    return
+    if not villainv01.user_joined and not villainv01.user_added:  
+        return
+    try:       	
+      from userbot.plugins.sql_helper.gmute_sql import is_gmuted
+      guser = await villainv01.get_user()      
+      gmuted = is_gmuted(guser.id)             
+    except:      
+       return
+    if gmuted:
+     for i in gmuted:
+         if i.sender == str(guser.id):                                                                         
+             chat = await villainv01.get_chat()
+             admin = chat.admin_rights
+             creator = chat.creator   
+             if admin or creator:
+              try:
+                 await client.edit_permissions(villainv01.chat_id, guser.id, view_messages=False)                              
+                 await villainv01.reply(
+                  f"⚠️⚠️**Warning**⚠️⚠️\n\n`Gbanned User Joined the chat!!`\n"                      
+                  f"**⚜️ Victim Id ⚜️**:\n[{guser.id}](tg://user?id={guser.id})\n"                   
+                  f"**🔥 Action 🔥**  :\n`Banned this piece of shit....` **AGAIN!**")                                                
+              except:       
+                 villainv01.reply("`Shit!! No permission to ban users.\n@admins ban this retard.\nGlobally Banned User And A Potential Spammer`\n**Make your group a safe place by cleaning this shit**")                   
+                 return
                   
                   

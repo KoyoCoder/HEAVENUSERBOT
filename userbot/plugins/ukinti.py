@@ -74,13 +74,13 @@ async def _(event):
     r = 0
     await edit_or_reply(event, "Searching Participant Lists.")
     async for i in borg.iter_participants(event.chat_id):
-        p = p + 1
+        p += 1
         #
         # Note that it's "reversed". You must set to ``True`` the permissions
         # you want to REMOVE, and leave as ``None`` those you want to KEEP.
         rights = ChatBannedRights(until_date=None, view_messages=True)
         if isinstance(i.status, UserStatusEmpty):
-            y = y + 1
+            y += 1
             if "y" in input_str:
                 status, e = await ban_user(event.chat_id, i, rights)
                 if not status:
@@ -88,9 +88,9 @@ async def _(event):
                     e.append(str(e))
                     break
                 else:
-                    c = c + 1
+                    c += 1
         if isinstance(i.status, UserStatusLastMonth):
-            m = m + 1
+            m += 1
             if "m" in input_str:
                 status, e = await ban_user(event.chat_id, i, rights)
                 if not status:
@@ -98,9 +98,9 @@ async def _(event):
                     e.append(str(e))
                     break
                 else:
-                    c = c + 1
+                    c += 1
         if isinstance(i.status, UserStatusLastWeek):
-            w = w + 1
+            w += 1
             if "w" in input_str:
                 status, e = await ban_user(event.chat_id, i, rights)
                 if not status:
@@ -108,9 +108,9 @@ async def _(event):
                     e.append(str(e))
                     break
                 else:
-                    c = c + 1
+                    c += 1
         if isinstance(i.status, UserStatusOffline):
-            o = o + 1
+            o += 1
             if "o" in input_str:
                 status, e = await ban_user(event.chat_id, i, rights)
                 if not status:
@@ -118,9 +118,9 @@ async def _(event):
                     e.append(str(e))
                     break
                 else:
-                    c = c + 1
+                    c += 1
         if isinstance(i.status, UserStatusOnline):
-            q = q + 1
+            q += 1
             if "q" in input_str:
                 status, e = await ban_user(event.chat_id, i, rights)
                 if not status:
@@ -128,9 +128,9 @@ async def _(event):
                     e.append(str(e))
                     break
                 else:
-                    c = c + 1
+                    c += 1
         if isinstance(i.status, UserStatusRecently):
-            r = r + 1
+            r += 1
             if "r" in input_str:
                 status, e = await ban_user(event.chat_id, i, rights)
                 if not status:
@@ -138,9 +138,9 @@ async def _(event):
                     e.append(str(e))
                     break
                 else:
-                    c = c + 1
+                    c += 1
         if i.bot:
-            b = b + 1
+            b += 1
             if "b" in input_str:
                 status, e = await ban_user(event.chat_id, i, rights)
                 if not status:
@@ -148,18 +148,18 @@ async def _(event):
                     e.append(str(e))
                     break
                 else:
-                    c = c + 1
+                    c += 1
         elif i.deleted:
-            d = d + 1
+            d += 1
             if "d" in input_str:
                 status, e = await ban_user(event.chat_id, i, rights)
                 if not status:
                     await edit_or_reply(event, "I need admin priveleges to perform this action!")
                     e.append(str(e))
                 else:
-                    c = c + 1
+                    c += 1
         elif i.status is None:
-            n = n + 1
+            n += 1
     if input_str:
         required_string = """Kicked {} / {} users
 Deleted Accounts: {}

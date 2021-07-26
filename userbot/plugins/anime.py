@@ -23,9 +23,10 @@ async def nope(h1m4n5hu0p):
     await troll[0].click(
         villain_v01.chat_id,
         reply_to=villain_v01.reply_to_msg_id,
-        silent=True if villain_v01.is_reply else False,
+        silent=bool(villain_v01.is_reply),
         hide_via=True,
     )
+
     await villain_v01.delete()
     
 

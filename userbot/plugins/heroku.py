@@ -105,11 +105,11 @@ async def variable(var):
         except IndexError:
             return await var.edit("`Please specify ConfigVars you want to delete`")
         await asyncio.sleep(1.5)
-        if variable in heroku_var:
-            await var.edit(f"**{variable}**  `successfully deleted`")
-            del heroku_var[variable]
-        else:
+        if variable not in heroku_var:
             return await var.edit(f"**{variable}**  `is not exists`")
+
+        await var.edit(f"**{variable}**  `successfully deleted`")
+        del heroku_var[variable]
 
 
 @bot.on(admin_cmd(pattern="usage(?: |$)", outgoing=True))

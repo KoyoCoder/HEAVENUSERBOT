@@ -43,14 +43,15 @@ def button(page, modules):
         pairs.append([modules[-1]])
     max_pages = ceil(len(pairs) / Row)
     pairs = [pairs[i : i + Row] for i in range(0, len(pairs), Row)]
-    buttons = []
-    for pairs in pairs[page]:
-        buttons.append(
-            [
-                custom.Button.inline(f"{heaven_emoji} " + pair, data=f"Information[{page}]({pair})")
-                for pair in pairs
-            ]
-        )
+    buttons = [
+        [
+            custom.Button.inline(
+                f"{heaven_emoji} " + pair, data=f"Information[{page}]({pair})"
+            )
+            for pair in pairs
+        ]
+        for pairs in pairs[page]
+    ]
 
     buttons.append(
         [
@@ -66,9 +67,6 @@ def button(page, modules):
         ]
     )
     return [max_pages, buttons]
-    # Changing this line may give error in bot as i added some special cmds in HeavenBot channel to get this module work...
-
-    modules = CMD_HELP
 if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
     @tgbot.on(InlineQuery)  # pylint:disable=E0602
     async def inline_handler(event):
@@ -118,7 +116,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
 
     @tgbot.on(callbackquery.CallbackQuery(data=compile(b"page\((.+?)\)")))
     async def page(event):
-        if not event.query.user_id == bot.uid:
+        if event.query.user_id != bot.uid:
             return await event.answer(
                 "HELLO THERE. PLEASE MAKE YOUR OWN HEAVENBOT AND USE. © HeavenBot ™",
                 cache_time=0,
@@ -146,7 +144,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         callbackquery.CallbackQuery(data=compile(b"Information\[(\d*)\]\((.*)\)"))
     )
     async def Information(event):
-        if not event.query.user_id == bot.uid:
+        if event.query.user_id != bot.uid:
             return await event.answer(
                 "HELLO THERE. PLEASE MAKE YOUR OWN HEAVENBOT AND USE. © HeavenBot ™",
                 cache_time=0,
@@ -179,7 +177,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         callbackquery.CallbackQuery(data=compile(b"commands\[(.*)\[(\d*)\]\]\((.*)\)"))
     )
     async def commands(event):
-        if not event.query.user_id == bot.uid:
+        if event.query.user_id != bot.uid:
             return await event.answer(
                 "HELLO THERE. PLEASE MAKE YOUR OWN HEAVENBOT AND USE. © HeavenBot ™",
                 cache_time=0,
@@ -192,14 +190,14 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
 
         result = f"**📗 File:** `{cmd}`\n"
         if CMD_HELP_BOT[cmd]["info"]["info"] == "":
-            if not CMD_HELP_BOT[cmd]["info"]["warning"] == "":
+            if CMD_HELP_BOT[cmd]["info"]["warning"] != "":
                 result += f"**⬇️ Official:** {'✅' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n"
                 result += f"**⚠️ Warning :** {CMD_HELP_BOT[cmd]['info']['warning']}\n\n"
             else:
                 result += f"**⬇️ Official:** {'✅' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n\n"
         else:
             result += f"**⬇️ Official:** {'✅' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n"
-            if not CMD_HELP_BOT[cmd]["info"]["warning"] == "":
+            if CMD_HELP_BOT[cmd]["info"]["warning"] != "":
                 result += f"**⚠️ Warning:** {CMD_HELP_BOT[cmd]['info']['warning']}\n"
             result += f"**ℹ️ Info:** {CMD_HELP_BOT[cmd]['info']['info']}\n\n"
 

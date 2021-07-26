@@ -153,7 +153,7 @@ async def _(event):
     if event.fwd_from:
         return
     animation_interval = 3
-    animation_ttl = range(0, 103)
+    animation_ttl = range(103)
     await edit_or_reply(event, "Let me tel you")
     animation_chars = [
         "1 ❤️ love story",
@@ -289,7 +289,7 @@ async def _(event):
     if event.fwd_from:
         return
     animation_interval = 1
-    animation_ttl = range(0, 101)
+    animation_ttl = range(101)
     await edit_or_reply(event, "fuk")
     animation_chars = ["👉       ✊️", "👉     ✊️", "👉  ✊️", "👉✊️💦"]
     for i in animation_ttl:
@@ -303,7 +303,7 @@ async def _(event):
     if event.fwd_from:
         return
     animation_interval = 1
-    animation_ttl = range(0, 101)
+    animation_ttl = range(101)
     await edit_or_reply(event, "sux")
     animation_chars = ["🤵       👰", "🤵     👰", "🤵  👰", "🤵👼👰"]
     for i in animation_ttl:
@@ -316,7 +316,7 @@ async def _(event):
     if event.fwd_from:
         return
     animation_interval = 1
-    animation_ttl = range(0, 101)
+    animation_ttl = range(101)
     await edit_or_reply(event, "kiss")
     animation_chars = ["🤵       👰", "🤵     👰", "🤵  👰", "🤵💋👰"]
     for i in animation_ttl:
