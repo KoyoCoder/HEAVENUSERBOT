@@ -54,21 +54,21 @@ async def _(event):
                 await borg.send_message(chat, ONE)
                 response = await conv.get_response(chat)
                 await event.delete()
-                if not response.text == "/start":
+                if response.text != "/start":
                     await response.delete()
                     await borg.send_message(chat, LWARN)
                     response = await conv.get_response(chat)
                     await event.delete()
                     await response.delete()
                     response = await conv.get_response(chat)
-                    if not response.text == "/start":
-                        await borg.send_message(chat, TWO)
-                        await asyncio.sleep(3)
-                        await event.client(functions.contacts.BlockRequest(chat_id))
+                if response.text != "/start":
+                    await borg.send_message(chat, TWO)
+                    await asyncio.sleep(3)
+                    await event.client(functions.contacts.BlockRequest(chat_id))
             elif y == "2":
                 await borg.send_message(chat, LWARN)
                 response = await conv.get_response(chat)
-                if not response.text == "/start":
+                if response.text != "/start":
                     await borg.send_message(chat, TWO)
                     await asyncio.sleep(3)
                     await event.client(functions.contacts.BlockRequest(chat_id))
@@ -78,24 +78,24 @@ async def _(event):
                 response = await conv.get_response(chat)
                 await event.delete()
                 await response.delete()
-                if not response.text == "/start":
+                if response.text != "/start":
                     await borg.send_message(chat, LWARN)
                     await event.delete()
                     response = await conv.get_response(chat)
-                    if not response.text == "/start":
-                        await borg.send_message(chat, TWO)
-                        await asyncio.sleep(3)
-                        await event.client(functions.contacts.BlockRequest(chat_id))
+                if response.text != "/start":
+                    await borg.send_message(chat, TWO)
+                    await asyncio.sleep(3)
+                    await event.client(functions.contacts.BlockRequest(chat_id))
             elif y == "4":
                 await borg.send_message(chat, FIVE)
                 response = await conv.get_response(chat)
-                if not response.text == "/start":
+                if response.text != "/start":
                     await borg.send_message(chat, LWARN)
                     response = await conv.get_response(chat)
-                    if not response.text == "/start":
-                        await borg.send_message(chat, TWO)
-                        await asyncio.sleep(3)
-                        await event.client(functions.contacts.BlockRequest(chat_id))
+                if response.text != "/start":
+                    await borg.send_message(chat, TWO)
+                    await asyncio.sleep(3)
+                    await event.client(functions.contacts.BlockRequest(chat_id))
             else:
                 await borg.send_message(
                     chat,
@@ -103,10 +103,10 @@ async def _(event):
                 )
                 response = await conv.get_response(chat)
                 z = response.text
-                if not z == "/start":
+                if z != "/start":
                     await borg.send_message(chat, LWARN)
                     await conv.get_response(chat)
-                    if not response.text == "/start":
+                    if response.text != "/start":
                         await borg.send_message(chat, TWO)
                         await asyncio.sleep(3)
                         await event.client(functions.contacts.BlockRequest(chat_id))

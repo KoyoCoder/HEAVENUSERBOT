@@ -60,8 +60,7 @@ async def get_chatinfo(event):
 def user_full_name(user):
     names = [user.first_name, user.last_name]
     names = [i for i in list(names) if i]
-    full_name = " ".join(names)
-    return full_name
+    return " ".join(names)
 
 
 @bot.on(admin_cmd(pattern="inviteall ?(.*)"))
@@ -69,10 +68,7 @@ def user_full_name(user):
 async def get_users(event):
     sender = await event.get_sender()
     me = await event.client.get_me()
-    if not sender.id == me.id:
-        heaven = await edit_or_reply(event, "`processing...`")
-    else:
-        heaven = await edit_or_reply(event, "`processing...`")
+    heaven = await edit_or_reply(event, "`processing...`")
     kraken = await get_chatinfo(event)
     chat = await event.get_chat()
     if event.is_private:
@@ -91,13 +87,13 @@ async def get_users(event):
             await event.client(
                 functions.channels.InviteToChannelRequest(channel=chat, users=[user.id])
             )
-            s = s + 1
+            s += 1
             await heaven.edit(
                 f"**Terminal Running...**\n\n• Invited `{s}` people \n• Failed to Invite `{f}` people\n\n**× LastError:** `{error}`"
             )
         except Exception as e:
             error = str(e)
-            f = f + 1
+            f += 1
     return await heaven.edit(
         f"**Terminal Finished** \n\n• Successfully kidnaped `{s}` people \n• failed to kidnape `{f}` people"
     )

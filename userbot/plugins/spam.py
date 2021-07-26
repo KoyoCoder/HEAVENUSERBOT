@@ -40,7 +40,7 @@ async def bigspam(heaven):
         heaven_msg = heaven.text
         heavenbot_count = int(heaven_msg[9:13])
         heaven_spam = str(heaven.text[13:])
-        for i in range(1, heavenbot_count):
+        for _ in range(1, heavenbot_count):
             await heaven.respond(heaven_spam)
         await heaven.delete()
         if LOGGER:
@@ -70,7 +70,7 @@ async def spammer(e):
 async def tiny_pic_spam(e):
     sender = await e.get_sender()
     me = await e.client.get_me()
-    if not sender.id == me.id and not SUDO_WALA:
+    if sender.id != me.id and not SUDO_WALA:
         return await e.reply("`Sorry sudo users cant access this command..`")
     try:
         await e.delete()
@@ -83,11 +83,10 @@ async def tiny_pic_spam(e):
             not reply_message
             or not e.reply_to_msg_id
             or not reply_message.media
-            or not reply_message.media
         ):
             return await e.edit("```Reply to a pic/sticker/gif/video message```")
         message = reply_message.media
-        for i in range(1, counter):
+        for _ in range(1, counter):
             await e.client.send_file(e.chat_id, message)
     except:
         return await e.reply(

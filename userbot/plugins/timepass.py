@@ -15,7 +15,7 @@ async def _(event):
     if event.fwd_from:
         return
     animation_interval = 0.3
-    animation_ttl = range(0, 28)
+    animation_ttl = range(28)
    # input_str = event.pattern_match.group(1)
    # if input_str == "tp":
     await edit_or_reply(event, "Time Pass...")

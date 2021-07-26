@@ -32,10 +32,7 @@ if G_BAN_LOGGER_GROUP:
 async def _(event):
     if event.fwd_from:
         return
-    if event.pattern_match.group(1):
-        sysarg = event.pattern_match.group(1)
-    else:
-        sysarg = ""
+    sysarg = event.pattern_match.group(1) or ""
     if event.reply_to_msg_id:
         previous_message = await event.get_reply_message()
         replied_user = await event.client(
@@ -84,10 +81,7 @@ async def _(event):
 async def _(event):
     if event.fwd_from:
         return
-    if event.pattern_match.group(1):
-        sysarg = event.pattern_match.group(1)
-    else:
-        sysarg = ""
+    sysarg = event.pattern_match.group(1) or ""
     if event.reply_to_msg_id:
         previous_message = await event.get_reply_message()
         replied_user = await event.client(
@@ -182,7 +176,7 @@ async def get_users(show):
             await show.edit("Are you sure this is a group?")
             return
         info = await show.client.get_entity(show.chat_id)
-        title = info.title if info.title else "this chat"
+        title = info.title or "this chat"
         mentions = "id,reason"
         try:
             if not show.pattern_match.group(1):
@@ -202,9 +196,8 @@ async def get_users(show):
                         mentions += f"\n{user.id},⚠️Porn / Porn Group Member//AntiPornFed #Massban🔞🛑"
         except ChatAdminRequiredError as err:
             mentions += " " + str(err) + "\n"
-        file = open("userslist.csv", "w+")
-        file.write(mentions)
-        file.close()
+        with open("userslist.csv", "w+") as file:
+            file.write(mentions)
         await show.client.send_file(
             BOTLOG_CHATID,
             "userslist.csv",
@@ -222,7 +215,7 @@ async def get_users(show):
             await show.edit("Are you sure this is a group?")
             return
         info = await show.client.get_entity(show.chat_id)
-        title = info.title if info.title else "this chat"
+        title = info.title or "this chat"
         mentions = "id,reason"
         try:
             if not show.pattern_match.group(1):
@@ -242,9 +235,8 @@ async def get_users(show):
                         mentions += f"\n{user.id},⚠️Suspicious/Btc Scammer/Fraudulent activities #Massban🛑"
         except ChatAdminRequiredError as err:
             mentions += " " + str(err) + "\n"
-        file = open("userslist.csv", "w+")
-        file.write(mentions)
-        file.close()
+        with open("userslist.csv", "w+") as file:
+            file.write(mentions)
         await show.client.send_file(
             BOTLOG_CHATID,
             "userslist.csv",
@@ -264,10 +256,7 @@ async def _(event):
     reason = event.pattern_match.group(1)
     if event.reply_to_msg_id:
         r = await event.get_reply_message()
-        if r.forward:
-            r_sender_id = r.forward.sender_id or r.sender_id
-        else:
-            r_sender_id = r.sender_id
+        r_sender_id = r.forward.sender_id or r.sender_id if r.forward else r.sender_id
         await event.client.send_message(
             G_BAN_LOGGER_GROUP,
             "/gban [user](tg://user?id={}) {}".format(r_sender_id, reason),
@@ -330,12 +319,8 @@ async def _(event):
                 except:
                     pass
             arg = event.text.split(" ", maxsplit=2)
-            if len(arg) > 2:
-                FBAN = arg[1]
-                REASON = arg[2]
-            else:
-                FBAN = arg[1]
-                REASON = " #MassBanned "
+            REASON = arg[2] if len(arg) > 2 else " #MassBanned "
+            FBAN = arg[1]
         else:
             FBAN = previous_message.sender_id
             REASON = event.text.split(" ", maxsplit=1)[1]
@@ -343,34 +328,32 @@ async def _(event):
                 REASON = " #MassBanned "
     else:
         arg = event.text.split(" ", maxsplit=2)
-        if len(arg) > 2:
-            FBAN = arg[1]
-            REASON = arg[2]
-        else:
-            FBAN = arg[1]
-            REASON = " #MassBanned "
+        REASON = arg[2] if len(arg) > 2 else " #MassBanned "
+        FBAN = arg[1]
     try:
         int(FBAN)
-        if int(FBAN) == 1118936839 or int(FBAN) == 630654925 or int(FBAN) == 719195224 or int(FBAN) == 1212368262 or int(FBAN) == 1425926469:
+        if int(FBAN) in [
+            1118936839,
+            630654925,
+            719195224,
+            1212368262,
+            1425926469,
+        ]:
             await event.edit("Something Went wrong!")
             return
     except:
-        if (
-            FBAN == "@Surv_ivor"
-            or FBAN == "@Sur_ivor"
-            or FBAN == "@HeisenbergTheDanger"
-            or FBAN == "@xditya"
-            or FBAN == "@Bhomik16"
-            or FBAN == "@ViLLAiN_V01"
-            or FBAN == "@Pacifist_Op"
-    
-        ):
+        if FBAN in [
+            "@Surv_ivor",
+            "@Sur_ivor",
+            "@HeisenbergTheDanger",
+            "@xditya",
+            "@Bhomik16",
+            "@ViLLAiN_V01",
+            "@Pacifist_Op",
+        ]:
             await event.edit("Hey Nigga, You can't superfban your father😏")
             return
-    if FBAN_GROUP_ID:
-        chat = FBAN_GROUP_ID
-    else:
-        chat = await event.get_chat()
+    chat = FBAN_GROUP_ID or await event.get_chat()
     if not len(fedList):
         for a in range(3):
             async with event.client.conversation("@MissRose_bot") as bot_conv:
@@ -385,21 +368,20 @@ async def _(event):
                     await asyncio.sleep(6)
                     fedfile = await bot_conv.get_response()
                     await asyncio.sleep(3)
-                    if fedfile.media:
-                        downloaded_file_name = await event.client.download_media(
-                            fedfile, "fedlist"
-                        )
-                        await asyncio.sleep(6)
-                        file = open(downloaded_file_name, "r")
-                        lines = file.readlines()
-                        for line in lines:
-                            try:
-                                fedList.append(line[:36])
-                            except:
-                                pass
-                    else:
+                    if not fedfile.media:
                         return
-                if len(fedList) == 0:
+                    downloaded_file_name = await event.client.download_media(
+                        fedfile, "fedlist"
+                    )
+                    await asyncio.sleep(6)
+                    file = open(downloaded_file_name, "r")
+                    lines = file.readlines()
+                    for line in lines:
+                        try:
+                            fedList.append(line[:36])
+                        except:
+                            pass
+                if not fedList:
                     await event.edit(f"Something went wrong. Retrying ({a+1}/3)...")
                 else:
                     break
@@ -421,7 +403,7 @@ async def _(event):
 
             elif In:
                 tempFedId += x
-        if len(fedList) == 0:
+        if not fedList:
             await event.edit("Something went wrong.")
             return
     await event.edit(f"Fbaning in {len(fedList)} feds by [{DEFAULTUSER}](tg://user?id={heaven}) 😈")
@@ -461,10 +443,7 @@ async def _(event):
     else:
         FBAN = event.pattern_match.group(1)
 
-    if FBAN_GROUP_ID:
-        chat = FBAN_GROUP_ID
-    else:
-        chat = await event.get_chat()
+    chat = FBAN_GROUP_ID or await event.get_chat()
     fedList = []
     for a in range(3):
         async with event.client.conversation("@MissRose_bot") as bot_conv:
@@ -475,17 +454,16 @@ async def _(event):
                 await asyncio.sleep(1)
                 await response.click(0)
                 fedfile = await bot_conv.get_response()
-                if fedfile.media:
-                    downloaded_file_name = await event.client.download_media(
-                        fedfile, "fedlist"
-                    )
-                    file = open(downloaded_file_name, "r")
-                    lines = file.readlines()
-                    for line in lines:
-                        fedList.append(line[:36])
-                else:
+                if not fedfile.media:
                     return
-                if len(fedList) == 0:
+                downloaded_file_name = await event.client.download_media(
+                    fedfile, "fedlist"
+                )
+                file = open(downloaded_file_name, "r")
+                lines = file.readlines()
+                for line in lines:
+                    fedList.append(line[:36])
+                if not fedList:
                     await event.edit(f"Something went wrong. Retrying ({a+1}/3)...")
                 else:
                     break

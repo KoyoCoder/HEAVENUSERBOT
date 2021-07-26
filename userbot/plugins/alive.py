@@ -24,11 +24,7 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "𝐇𝐞𝐚𝐯𝐞𝐧𝐁�
 
 ludosudo = Config.SUDO_USERS
 
-if ludosudo:
-    sudou = "True"
-else:
-    sudou = "False"
-
+sudou = "True" if ludosudo else "False"
 heaven = bot.uid
 
 edit_time = 16

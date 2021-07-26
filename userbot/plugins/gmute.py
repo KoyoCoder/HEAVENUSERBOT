@@ -15,7 +15,7 @@ async def blowjob(event):
     user_id = reply.sender_id
     if user_id == (await borg.get_me()).id:	
         await edit_or_reply(event, "I guess you need some rest. You are trying to gmute yourself😌")	
-        	
+
         return
     elif event.is_private:
         await edit_or_reply(event, "`Son can't speak now🤐. Filled mouth with cum`💦")
@@ -26,7 +26,7 @@ async def blowjob(event):
         userid = event.pattern_match.group(1)
     elif reply is not None:
         userid = reply.sender_id
-    elif private is True:
+    elif private:
         userid = event.chat_id
     else:
         return await edit_or_reply(event, "I need a user to gmute. Please reply or get his uid")
@@ -57,7 +57,7 @@ async def cumshot(event):
         userid = event.pattern_match.group(1)
     elif reply is not None:
         userid = reply.sender_id
-    elif private is True:
+    elif private:
         userid = event.chat_id
     else:
         return await edit_or_reply(event, "Please reply to a user or add them into the command to ungmute them.")

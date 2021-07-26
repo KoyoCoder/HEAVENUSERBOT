@@ -25,10 +25,7 @@ async def _(event):
     stdout, stderr = await process.communicate()
     result = str(stdout.decode().strip()) + str(stderr.decode().strip())
     heavenuser = await event.client.get_me()
-    if heavenuser.username:
-        curruser = heavenuser.username
-    else:
-        curruser = "heavenbot"
+    curruser = heavenuser.username or "heavenbot"
     uid = os.geteuid()
     if uid == 0:
         cresult = f"`{curruser}:~#` `{cmd}`\n`{result}`"

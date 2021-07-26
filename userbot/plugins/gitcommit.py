@@ -68,9 +68,8 @@ async def git_commit(file_name, mafiabot):
         create_file = True
         if i == 'ContentFile(path="' + file_name + '")':
             return await heavenbot.edit("`File Already Exists`")
-            create_file = False
     file_name = "userbot/plugins/" + file_name
-    if create_file == True:
+    if create_file:
         file_name = file_name.replace("./userbot/temp/", "")
         print(file_name)
         try:
